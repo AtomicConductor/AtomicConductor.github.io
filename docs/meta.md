@@ -31,10 +31,16 @@ To start the server locally:
 
 Follow the Google [developer documentation style guide][3].
 
-#### Conductor terminology.
+List other guidelines here:
+  * Don't try to sell the benefits.
+  * Scan the doc. Can you make a mental index? 
+  * Omit <del>needless</del> words. -- <cite>[Steve Krug][1]</cite>
 
-To save time, we should find ways to express Conductor concepts consistently. e.g. 
-_At Conductor, Your account at Conductor, on Conductor's servers??_
+#### Conductor-specific terminology.
+
+Try to be consistent with Conductor concepts. Which of the following?
+
+* render machine | render-instance | render-vm 
 
 #### What to document.
 
@@ -47,13 +53,8 @@ _At Conductor, Your account at Conductor, on Conductor's servers??_
     * Obvious features.
     * Things any normal computer user should know.
     * Things unrelated to Conductor. e.g. Docker. Provide links if necessary.
-* Consider the option to improve UX to make it obvious, rather than document it. 
+* Try to improve UX to obviate the need for documentation. 
 
-
-#### Test.
- 
-* Scan the doc. Can you make a mental index? 
-* Omit <del>needless</del> words. -- <cite>[Steve Krug][1]</cite>
  
 ## Publish
 
