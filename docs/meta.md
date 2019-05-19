@@ -32,6 +32,7 @@ To start the server locally:
 Follow the Google [developer documentation style guide][3].
 
 List other guidelines here:
+
   * Don't try to sell the benefits.
   * Scan the doc. Can you make a mental index? 
   * Omit <del>needless</del> words. -- <cite>[Steve Krug][1]</cite>
