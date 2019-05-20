@@ -2,9 +2,7 @@ site_name: Conductor Documentation
 theme: windmill
 site_description: Concuctor cloud rendering on demand
 repo_url: https://atomicconductor.github.io
-copyright: Conductor Technologies
-
-
+remote_branch: master
 site_url: https://www.conductortech.com
 site_description: Project documentation with Markdown.
 site_author: MkDocs Team
@@ -38,5 +36,6 @@ markdown_extensions:
   - toc:
       permalink: true
  
+google_analytics: ['UA-97980144-4', 'auto']
 
 copyright: Copyright &copy; 2019 , Conductor Technologies.

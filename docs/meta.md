@@ -1,45 +1,61 @@
 #Docs on docs
 
-This documentation project contains _technical_ documentation for public facing Conductor components. Internal documentation for other components is beyond scope.
+This docs project contains _technical_ documentation for public facing Conductor components. 
+
+Internal docs are beyond scope.
 
 ## Setup
 
-Clone the documentation authoring repo AND the final site repo
+Clone the repository
 
+``` bash
+git clone git@github.com:AtomicConductor/AtomicConductor.github.io.git
+cd AtomicConductor.github.io
+git checkout authoring
+```
+This documentation is built on [mkdocs][2].
+You'll also need to install the Windmill theme, and some code formatting plugins.
 
+``` bash
+pip install mkdocs mkdocs-windmill pygments markdown-fenced-code-tabs
+```
 
-Conductor documentation is built on [mkdocs][2].
-It uses the Windmill theme, and some code formatting plugins.
+You'll find a `mkdocs.yml` file and a `docs` folder in the root of the repo.
 
-`pip install mkdocs mkdocs-windmill pygments markdown-fenced-code-tabs`
+To start the server locally enter:
+``` bash 
+mkdocs serve
+```
 
-The setup consists of a `mkdocs.yml` file and a `docs` folder in the root of the repo.
+You can view the site locally at [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-To start the server locally:
+ 
+## Publish
 
-* From the root of the repo enter `mkdocs serve`
-* View the site at **127.0.0.1:8000**
+Once you've made some edits, publish to the Conductor documentation site.
 
+``` bash
+mkdocs gh-deploy
+``` 
 
-
+You can view the deployed site at [https://atomicconductor.github.io/](https://atomicconductor.github.io/)
 
 ## Write docs
 
-### Grammar
+!!!note
+    Many items below are rough thoughts and placeholders. Its all up for discussion.
 
-#### General guidelines.
+### Grammar & Style
 
 Follow the Google [developer documentation style guide][3].
 
 List other guidelines here:
 
-  * Don't try to sell the benefits.
-  * Scan the doc. Can you make a mental index? 
+  * Don't try to sell the benefits, this isn't marcom.
   * Omit <del>needless</del> words. -- <cite>[Steve Krug][1]</cite>
+  * Scan the doc. Can you make a mental index?
 
-#### Conductor-specific terminology.
-
-Try to be consistent with Conductor concepts. Which of the following?
+Try to be consistent with Conductor concepts. For example, which of the following?
 
 * render machine | render-instance | render-vm 
 
@@ -56,26 +72,12 @@ Try to be consistent with Conductor concepts. Which of the following?
     * Things unrelated to Conductor. e.g. Docker. Provide links if necessary.
 * Try to improve UX to obviate the need for documentation. 
 
- 
-## Publish
-
-The docs are hosted on Github Pages. 
-
-To publish:
-
-* From the root of the repo enter `mkdocs gh-deploy`. 
-* To see the updates, head over to [our github pages site][4]
-
-
-
-### Workflow
-
 #### Responsibilities
 
 * The dev who writes code is responsible for documenting it.
 * Code reviewers should check the docs reflect the changes.
 
-#### Build and Deploy
+## Build and Deploy
 
 Consider these constraints:
 

@@ -37,7 +37,7 @@ $CONDUCTOR_LOCATION/conductor/clarisse/startup.py
 
     `from conductor.clarisse import startup`
 
-Once the plugin is registered, you should see ConductorJob in the **Create** menu, and in the **New** menu when you right click over a browser. If not, refer to [installation troubleshooting](../install.md#troubleshooting).
+Once the plugin is registered, you should see ConductorJob in the **Create** menu, and in the **New** menu when you right click over a browser. If not, refer to [installation troubleshooting](../install.md#troubleshooting) or submit a ticket to [Conductor support](https://support.conductortech.com/hc/en-us/requests/new) .
 
 
 ## Quick start
@@ -243,9 +243,11 @@ The **ConductorJob** scripted class is designed to be flexible and powerful. Com
 
 All the Conductor variables are prefixed with `CT_` and are created when the **ConductorJob** is first registered with Clarisse. They are intended for use only in **ConductorJob** items, and their values are set at the time you create a submission or preview. They cannot be relied upon outside this context, and the value displayed in the Variables panel is only the last value that was set. 
 
+Conductor variables that hold paths are formatted to be compatible with Linux render instances. They are enclosed in double quotes, and on Windows, the drive letters are stripped away.
+
 ####Conductor variables exist at 3 different scopes:
 
-* **Global.** The same value for all job items. Example `CT_SCRIPT_DIR`.
+* **Global.** The same value for all job items. Example `CT_TMP_DIR`.
 * **Job.** A different vaue for each job. Example `CT_SEQUENCE`
 * **Task.** A different vaue for each generated task. . Example `CT_CHUNKS`
 
@@ -269,18 +271,15 @@ Below is the full list of Conductor variables.
 |CT_CHUNKCOUNT | 5 | Job |
 |CT_SCOUTCOUNT | 2 | Job |
 |CT_TIMESTAMP | 2019_05_07_01_12_46 | Job |
-|CT_SUBMITTER | conductor_job_item_name | Job |
-|CT_RENDER_PACKAGE | /path/to/project/shot.render | Global |
+|CT_RENDER_PACKAGE | "/path/to/project/shot.render" | Global |
 |CT_PROJECT | dpool | Job |
-|CT_CHUNKTYPE | regular | Task |
 |CT_CHUNKS | 9:10 9:10 | Task |
 |CT_CHUNKLENGTH | 2 | Task |
 |CT_CHUNKSTART | 9 | Task |
 |CT_CHUNKEND | 10 | Task |
-|CT_CHUNKSTEP | 1 | Task |
-|CT_DIRECTORIES | /path/to/renders/layerA /path/to/renders/layerB | Job |
+|CT_DIRECTORIES | "/path/to/renders/layerA" "/path/to/renders/layerB" | Job |
 |CT_PDIR | /path/to/project | Global |
-|CT_SCRIPT_DIR | /path/to/conductor/clarisse/scripts |  Global |
+|CT_TEMP_DIR | "/path/to/temp/directory" |  Global |
 
 
 
