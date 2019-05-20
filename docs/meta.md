@@ -38,7 +38,12 @@ Once you've made some edits, publish to the Conductor documentation site.
 mkdocs gh-deploy
 ``` 
 
-You can view the deployed site at [https://atomicconductor.github.io/](https://atomicconductor.github.io/)
+That builds and pushes the site to the master branch at Github.
+
+You can view it at [https://atomicconductor.github.io/](https://atomicconductor.github.io/)
+
+!!! warning
+    Don't merge or commit anything to **master**. It will get overwritten
 
 ## Write docs
 
