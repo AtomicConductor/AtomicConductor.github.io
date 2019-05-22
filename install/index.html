@@ -99,6 +99,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     <h1 id="install-client-tools">Install client tools.<a class="headerlink" href="#install-client-tools" title="Permanent link">&para;</a></h1>
 <p>To install the Conductor client tools, choose an installer from the list below. If you are working in a shared environment, it is recommended that you install manually in a shared location and set a few environment variables for your studio.</p>
 <h3 id="downloads">Downloads.<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
+<h4 id="for-maya-and-nuke">For Maya and Nuke<a class="headerlink" href="#for-maya-and-nuke" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -128,33 +129,42 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <td align="left">Manual install</td>
 <td align="left"><a href="https://github.com/AtomicConductor/conductor_client/archive/v2.7.100.tar.gz">v2.7.100.tar.gz</a></td>
 </tr>
+</tbody>
+</table>
+<h4 id="for-clarisse">For Clarisse<a class="headerlink" href="#for-clarisse" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">Release label</th>
+<th align="left">Operating system</th>
+<th align="left">Download link</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left">Clarisse beta</td>
 <td align="left">Centos el7 installer</td>
-<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.6/conductor-v2.8.6-0.el7.x86_64.rpm">conductor-v2.8.6-0.el7.x86_64.rpm</a></td>
+<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.7/conductor-v2.8.7-0.el7.x86_64.rpm">conductor-v2.8.7-0.el7.x86_64.rpm</a></td>
 </tr>
 <tr>
 <td align="left">Clarisse beta</td>
 <td align="left">Windows 10 installer</td>
-<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.6/conductor-v2.8.6.exe">conductor-v2.8.6.exe</a></td>
+<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.7/conductor-v2.8.7.exe">conductor-v2.8.7.exe</a></td>
 </tr>
 <tr>
 <td align="left">Clarisse beta</td>
 <td align="left">Mac installer</td>
-<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.6/conductor-v2.8.6.pkg">conductor-v2.8.6.pkg</a></td>
+<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.7/conductor-v2.8.7.pkg">conductor-v2.8.7.pkg</a></td>
 </tr>
 <tr>
 <td align="left">Clarisse beta</td>
 <td align="left">Manual install</td>
-<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/archive/v2.8.6.tar.gz">v2.8.6.tar.gz</a></td>
-</tr>
-<tr>
-<td align="left">All conductor-client releases</td>
-<td align="left">All</td>
-<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/releases">Github releases page</a></td>
+<td align="left"><a href="https://github.com/AtomicConductor/conductor_client/archive/v2.8.7.tar.gz">v2.8.7.tar.gz</a></td>
 </tr>
 </tbody>
 </table>
+<h4 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h4>
+<p>For all other versions, please visit the <a href="https://github.com/AtomicConductor/conductor_client/releases">Github releases page</a></p>
 <h3 id="to-run-an-installer">To run an installer.<a class="headerlink" href="#to-run-an-installer" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -167,6 +177,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h3 id="to-install-manually">To install manually.<a class="headerlink" href="#to-install-manually" title="Permanent link">&para;</a></h3>
 <p>Copy the downloaded source directory to a location of your choice and set the following environment variables. The examples below use Bash, and Powershell for Windows. You should adjust for your chosen environment.</p>
 <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_bash checked=checked class=code-tab data-lang=bash aria-controls=tab-group-0-0_bash-panel role=tab><label for=tab-group-0-0_bash class=code-tab-label data-lang=bash id=tab-group-0-0_bash-label>Mac</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-0-0_bash-panel aria-labelledby=tab-group-0-0_bash-label><div class=codehilite><pre><span></span><span class=nb>export</span> <span class=nv>CONDUCTOR_LOCATION</span><span class=o>=</span><span class=s2>&quot;/path/to/conductor_client&quot;</span>
+<span class=nb>export</span> <span class=nv>CONDUCTOR_CONFIG</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>HOME</span><span class=si>}</span><span class=s2>/Library/Application Support/Conductor/config.yml&quot;</span>
 <span class=c1># Python</span>
 <span class=nb>export</span> <span class=nv>PYTHONPATH</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>PYTHONPATH</span><span class=si>}</span><span class=s2>:</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>:</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>/installers/osx/python/lib/python2.7/site-packages&quot;</span>
 <span class=c1># Maya</span>
@@ -177,6 +188,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <span class=c1># Conductor command line utilities</span>
 <span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>/bin:</span><span class=nv>$PATH</span><span class=s2>&quot;</span>
 </pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_bash class=code-tab data-lang=bash aria-controls=tab-group-0-1_bash-panel role=tab><label for=tab-group-0-1_bash class=code-tab-label data-lang=bash id=tab-group-0-1_bash-label>Linux</label><div class=code-tabpanel role=tabpanel data-lang=bash id=tab-group-0-1_bash-panel aria-labelledby=tab-group-0-1_bash-label><div class=codehilite><pre><span></span><span class=nb>export</span> <span class=nv>CONDUCTOR_LOCATION</span><span class=o>=</span><span class=s2>&quot;/path/to/conductor_client&quot;</span>
+<span class=nb>export</span> <span class=nv>CONDUCTOR_CONFIG</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>HOME</span><span class=si>}</span><span class=s2>/.conductor/config.yml&quot;</span>
 <span class=c1># Python</span>
 <span class=nb>export</span> <span class=nv>PYTHONPATH</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>PYTHONPATH</span><span class=si>}</span><span class=s2>:</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>:</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>/python/lib/python2.7/site-packages&quot;</span>
 <span class=c1># Maya</span>
@@ -187,6 +199,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <span class=c1># Conductor command line utilities</span>
 <span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=s2>&quot;</span><span class=si>${</span><span class=nv>CONDUCTOR_LOCATION</span><span class=si>}</span><span class=s2>/bin:</span><span class=nv>$PATH</span><span class=s2>&quot;</span>
 </pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-2_powershell class=code-tab data-lang=powershell aria-controls=tab-group-0-2_powershell-panel role=tab><label for=tab-group-0-2_powershell class=code-tab-label data-lang=powershell id=tab-group-0-2_powershell-label>Windows</label><div class=code-tabpanel role=tabpanel data-lang=powershell id=tab-group-0-2_powershell-panel aria-labelledby=tab-group-0-2_powershell-label><div class=codehilite><pre><span></span><span class=nv>$Env:CONDUCTOR_LOCATION</span> <span class=p>=</span> <span class=s2>&quot;C:\path\to\conductor_client&quot;</span>
+<span class=nv>$Env:CONDUCTOR_CONFIG</span> <span class=p>=</span> <span class=s2>&quot;$Env:HOME\AppData\Roaming\Conductor Technologies\Conductor\config.yml&quot;</span>
+
 <span class=c># python</span>
 <span class=nv>$Env:PYTHONPATH</span> <span class=p>+=</span> <span class=s2>&quot;;$Env:CONDUCTOR_LOCATION&quot;</span>
 <span class=nv>$Env:PYTHONPATH</span> <span class=p>+=</span> <span class=s2>&quot;;$Env:CONDUCTOR_LOCATION\installers\windows\python\Lib\site-packages&quot;</span>
