@@ -102,8 +102,8 @@ The title that appears in the Conductor dashboard. You may use Clarisse variable
 Images to be rendered. Images must have the **Render to Disk** attribute set and their **Save As** field must contain a filename. You may use the **eye** buttons to disable one or more images.
 
 ---
-#### project
-The Conductor project. The project dropdown menu is populated or updated when the submitter connects to your Conductor account. If the menu contains only the **- not set -** option, then press the **refresh** button to connect.
+#### conductor_project_name
+The Conductor project. The dropdown menu is populated or updated when the submitter connects to your Conductor account. If the menu contains only the **- not set -** option, then press the **refresh** button to connect.
 
 !!!note
     If the list of projects in your account changed since the last time you opened the Clarisse project, you may find it is set incorrectly when it connects. 
@@ -228,6 +228,16 @@ Indicates that notifications will be sent by email on job completion.
 ---
 #### email_addresses
 A comma-delimited list of emails addresses to notify on job completion.
+
+---
+#### show_tracebacks
+Show a full stacktrace for software errors in the submitter.
+
+---
+#### conductor_log_level
+Set the log level for Conductor's library logging.
+
+
 
 ### Actions
 
