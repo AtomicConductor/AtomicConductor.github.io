@@ -7,8 +7,8 @@ site_url: https://www.conductortech.com
 site_description: Project documentation with Markdown.
 site_author: MkDocs Team
 
-extra:
-  logo:  image/logo.png
+# extra:
+#   logo:  image/logo.png
   
 nav:
   - Home: index.md
@@ -17,6 +17,8 @@ nav:
     - Clarisse: submitters/clarisse.md
     - Maya: submitters/maya.md
     - Nuke: submitters/nuke.md
+    - Command Line: submitters/commandline.md
+    
   - 'Web dashboard': 
     - Jobs: dashboard/jobs.md
   - Support: https://example.com/
