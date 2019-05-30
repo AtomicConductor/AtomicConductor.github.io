@@ -59,6 +59,8 @@ List other guidelines here:
   * Don't try to sell the benefits, this isn't marcom.
   * Omit <del>needless</del> words. -- <cite>[Steve Krug][1]</cite>
   * Scan the doc. Can you make a mental index?
+  * Check out [David Ogilvy's writing tips](https://www.ragan.com/8-timeless-writing-tips-from-david-ogilvy/)
+  *  <s>Avoid using the present participle.</s> Don't use the present participle.
 
 Try to be consistent with Conductor concepts. For example, which of the following?
 
