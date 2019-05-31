@@ -1,12 +1,12 @@
 ---
 title: Create a command-line submission
-summary: Use Conductor libraries to submit a job.
+summary: Use Conductor libraries to submit a job
 authors:
     - Julian Mann
 date: 2019-05-02
 ---
 
-# Command line submission.
+# Command line submission
 
 ## Introduction
 
@@ -42,7 +42,7 @@ args["project"] = "default"
 args["machine_flavor"] = "standard"
 args["cores"] = 2
 
-# Specify the list of file dependences the job requires. 
+# Specify the list of file dependencies the job requires. 
 # This includes textures, caches, plugins, tools.
 # You may add files or directories from anywhere on your filesystem.
 args["upload_paths"] = [
@@ -181,7 +181,7 @@ Dictates whether the submission will upload the job's dependencies immediately (
 
 #### location
 
-A string that indicates which location the job should be associated with. This option is relevant if you submit jobs from different locations. These could be differing geographic locations, or simply  machines that have differing file system views. 
+A string that indicates which location the job should be associated with. This option is relevant if you submit jobs from different locations. These could be differing geographic locations or simply machines that have differing file system views. 
 
 Typically each location should have its own Conductor downloader and uploader daemons running. The location feature allows each daemon to target only jobs that match its corresponding location.
 ``` python
@@ -240,12 +240,12 @@ Specify whether this job should take preference over other jobs in your account.
 
 The name of the Conductor project to associate this job with.
 ``` python
-    "project": "spiderman"
+    "project": "Spiderman"
 ```
 
 #### scout_frame
 
-Tasks that contain scout frames are runimmediately, while the rest are put on hold.
+Tasks that contain scout frames are run immediately, while the rest are put on hold.
 ``` python
 "scout_frame": "1-100x5"
 ```
@@ -259,7 +259,7 @@ Ids for software packages to use for the job. Packages are identified by their I
 
 #### tasks_data
 
-The definition of tasks. Each task dictionary must contain a command to be executed. It may optionally contain a frames field, which helps to determine whether it is a scout frame.
+The definition of tasks. Each task dictionary must contain a command to be executed. It may optionally contain a frames field, which helps to determine whether it is a scout-frame.
 ``` python
 "tasks_data": [
 {   
