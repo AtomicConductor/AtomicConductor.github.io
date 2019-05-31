@@ -35,7 +35,7 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Command line submission.", url: "#_top", children: [
+          {title: "Command line submission", url: "#_top", children: [
               {title: "Introduction", url: "#introduction" },
               {title: "Installation", url: "#installation" },
               {title: "Quick start", url: "#quick-start" },
@@ -96,7 +96,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="command-line-submission">Command line submission.<a class="headerlink" href="#command-line-submission" title="Permanent link">&para;</a></h1>
+    <h1 id="command-line-submission">Command line submission<a class="headerlink" href="#command-line-submission" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>The Conductor client tools provide modules and classes to help you craft a submission in cases where a GUI submitter is not suitable.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
@@ -122,7 +122,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <span class=n>args</span><span class=p>[</span><span class=s2>&quot;machine_flavor&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&quot;standard&quot;</span>
 <span class=n>args</span><span class=p>[</span><span class=s2>&quot;cores&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2</span>
 
-<span class=c1># Specify the list of file dependences the job requires. </span>
+<span class=c1># Specify the list of file dependencies the job requires. </span>
 <span class=c1># This includes textures, caches, plugins, tools.</span>
 <span class=c1># You may add files or directories from anywhere on your filesystem.</span>
 <span class=n>args</span><span class=p>[</span><span class=s2>&quot;upload_paths&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span>
@@ -229,7 +229,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p> <div class=codehilite><pre><span></span><span class=s2>&quot;local_upload&quot;</span><span class=p>:</span> <span class=bp>False</span>
 </pre></div></p>
 <h4 id="location">location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h4>
-<p>A string that indicates which location the job should be associated with. This option is relevant if you submit jobs from different locations. These could be differing geographic locations, or simply  machines that have differing file system views. </p>
+<p>A string that indicates which location the job should be associated with. This option is relevant if you submit jobs from different locations. These could be differing geographic locations or simply machines that have differing file system views. </p>
 <p>Typically each location should have its own Conductor downloader and uploader daemons running. The location feature allows each daemon to target only jobs that match its corresponding location.</p>
 <p> <div class=codehilite><pre><span></span><span class=s2>&quot;location&quot;</span><span class=p>:</span> <span class=s2>&quot;mars&quot;</span>
 </pre></div></p>
@@ -265,10 +265,10 @@ Valid options are:</p>
 </pre></div></p>
 <h4 id="project">project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h4>
 <p>The name of the Conductor project to associate this job with.</p>
-<p> <div class=codehilite><pre><span></span>    <span class=s2>&quot;project&quot;</span><span class=p>:</span> <span class=s2>&quot;spiderman&quot;</span>
+<p> <div class=codehilite><pre><span></span>    <span class=s2>&quot;project&quot;</span><span class=p>:</span> <span class=s2>&quot;Spiderman&quot;</span>
 </pre></div></p>
 <h4 id="scout_frame">scout_frame<a class="headerlink" href="#scout_frame" title="Permanent link">&para;</a></h4>
-<p>Tasks that contain scout frames are runimmediately, while the rest are put on hold.</p>
+<p>Tasks that contain scout frames are run immediately, while the rest are put on hold.</p>
 <p> <div class=codehilite><pre><span></span><span class=s2>&quot;scout_frame&quot;</span><span class=p>:</span> <span class=s2>&quot;1-100x5&quot;</span>
 </pre></div></p>
 <h4 id="software_package_ids">software_package_ids<a class="headerlink" href="#software_package_ids" title="Permanent link">&para;</a></h4>
@@ -276,7 +276,7 @@ Valid options are:</p>
 <p> <div class=codehilite><pre><span></span><span class=s2>&quot;software_package_ids&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;ae8026b7d9cfe524a77a3ebe94b9130a&quot;</span><span class=p>,</span>  <span class=s2>&quot;7208372e306614d514944938c395e0e7&quot;</span><span class=p>]</span>
 </pre></div></p>
 <h4 id="tasks_data">tasks_data<a class="headerlink" href="#tasks_data" title="Permanent link">&para;</a></h4>
-<p>The definition of tasks. Each task dictionary must contain a command to be executed. It may optionally contain a frames field, which helps to determine whether it is a scout frame.</p>
+<p>The definition of tasks. Each task dictionary must contain a command to be executed. It may optionally contain a frames field, which helps to determine whether it is a scout-frame.</p>
 <p> <div class=codehilite><pre><span></span><span class=s2>&quot;tasks_data&quot;</span><span class=p>:</span> <span class=p>[</span>
 <span class=p>{</span>   
     <span class=s2>&quot;command&quot;</span><span class=p>:</span><span class=s2>&quot;vray -display=0 -sceneFile=/tmp/batman_0008.vrscene&quot;</span><span class=p>,</span>
