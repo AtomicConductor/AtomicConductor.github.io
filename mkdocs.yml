@@ -9,22 +9,23 @@ site_author: MkDocs Team
 
 # extra:
 #   logo:  image/logo.png
-  
-nav:
+  nav:
   - Home: index.md
-  - Install client tools: install.md
-  - Submitters:
-    - Clarisse: submitters/clarisse.md
-    - Maya: submitters/maya.md
-    - Nuke: submitters/nuke.md
-    - Command Line: submitters/commandline.md
-    
-  - 'Web dashboard': 
-    - Jobs: dashboard/jobs.md
-  - Support: https://example.com/
-  - Bug Tracker: https://example.com/
+  - Client Tools:
+    - Install Client Tools: client_tools/install.md
+    - Plugins:
+      - Clarisse: client_tools/plugins/clarisse.md
+      - Maya: client_tools/plugins/maya.md
+      - Nuke: client_tools/plugins/nuke.md
+    - Command Line: client_tools/commandline.md
+  - Web dashboard: 
+    - Jobs View: web_dashboard/jobs_view.md
+  - Knowledgebase:
+    - Troubleshooting: knowledgebase/troubleshooting.md
+    - Instance Types: knowledgebase/instance_types.md
+      
   # - Meta: meta.md
-
+ 
 extra_css:
   - css/autumn.css
   - css/codetabs.css

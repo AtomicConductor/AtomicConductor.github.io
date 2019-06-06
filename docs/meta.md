@@ -61,6 +61,8 @@ List other guidelines here:
   * Scan the doc. Can you make a mental index?
   * Check out [David Ogilvy's writing tips](https://www.ragan.com/8-timeless-writing-tips-from-david-ogilvy/)
   *  <s>Avoid using the present participle.</s> Don't use the present participle.
+  * Don't put a period after headings.
+  * Use a grammar checker. 
 
 Try to be consistent with Conductor concepts. For example, which of the following?
 

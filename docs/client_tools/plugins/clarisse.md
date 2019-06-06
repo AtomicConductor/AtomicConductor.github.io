@@ -297,8 +297,8 @@ Below is the full list of Conductor variables.
 
 
 
-[preview]: ../image/clarisse/preview.png
-[titleimage]: ../image/clarisse/titleimage.png
-[prefs]: ../image/clarisse/prefs.png
-[new]: ../image/clarisse/new.png
-[frames]: ../image/clarisse/frames.png
+[preview]: ../../image/clarisse/preview.png
+[titleimage]: ../../image/clarisse/titleimage.png
+[prefs]: ../../image/clarisse/prefs.png
+[new]: ../../image/clarisse/new.png
+[frames]: ../../image/clarisse/frames.png

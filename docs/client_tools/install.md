@@ -1,8 +1,8 @@
-# Install client tools.
+# Install client tools
 
 To install the Conductor client tools, choose an installer from the list below. If you are working in a shared environment, it is recommended that you install manually in a shared location and set a few environment variables for your studio.
 
-### Downloads.
+### Downloads
 
 
 #### For Maya and Nuke
@@ -33,7 +33,7 @@ For all other versions, please visit the [Github releases page](https://github.c
 
 - Run the installer. Your system is set up and ready to submit jobs to Conductor. 
 
-### To install manually.
+### To install manually
  
 Copy the downloaded source directory to a location of your choice and set the following environment variables. The examples below use Bash, and Powershell for Windows. You should adjust for your chosen environment.
 
