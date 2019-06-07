@@ -115,19 +115,26 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <ul class="wm-toctree">
         <li class="wm-toc-li wm-toc-lev1 "><a href="" class="wm-article-link wm-toc-text">Home</a>
 </li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="install/" class="wm-article-link wm-toc-text">Install client tools</a>
-</li>
-        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Submitters</span>
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Client Tools</span>
 </li>
 <li class="wm-toc-li-nested collapse">
   <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="submitters/clarisse/" class="wm-article-link wm-toc-text">Clarisse</a>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="client_tools/install/" class="wm-article-link wm-toc-text">Install Client Tools</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="submitters/maya/" class="wm-article-link wm-toc-text">Maya</a>
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Plugins</span>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="submitters/nuke/" class="wm-article-link wm-toc-text">Nuke</a>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="client_tools/plugins/clarisse/" class="wm-article-link wm-toc-text">Clarisse</a>
 </li>
-      <li class="wm-toc-li wm-toc-lev2 "><a href="submitters/commandline/" class="wm-article-link wm-toc-text">Command Line</a>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="client_tools/plugins/maya/" class="wm-article-link wm-toc-text">Maya</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="client_tools/plugins/nuke/" class="wm-article-link wm-toc-text">Nuke</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 "><a href="client_tools/commandline/" class="wm-article-link wm-toc-text">Command Line</a>
 </li>
   </ul>
 </li>
@@ -136,15 +143,22 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </li>
 <li class="wm-toc-li-nested collapse">
   <ul class="wm-toctree">
-      <li class="wm-toc-li wm-toc-lev2 "><a href="dashboard/jobs/" class="wm-article-link wm-toc-text">Jobs</a>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="web_dashboard/jobs_view/" class="wm-article-link wm-toc-text">Jobs View</a>
 </li>
   </ul>
 </li>
 
-        <li class="wm-toc-li wm-toc-lev1 "><a href="https://example.com/" class="wm-article-link wm-toc-text">Support</a>
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Knowledgebase</span>
 </li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="https://example.com/" class="wm-article-link wm-toc-text">Bug Tracker</a>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="knowledgebase/troubleshooting/" class="wm-article-link wm-toc-text">Troubleshooting</a>
 </li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="knowledgebase/instance_types/" class="wm-article-link wm-toc-text">Instance Types</a>
+</li>
+  </ul>
+</li>
+
   </ul>
 </nav>
 
@@ -165,12 +179,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="install/" class="btn btn-xs btn-default pull-right">
+      <a href="client_tools/install/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="install/" class="btn btn-xs btn-link">
-        Install client tools
+      <a href="client_tools/install/" class="btn btn-xs btn-link">
+        Install Client Tools
       </a>
     </div>
     
@@ -192,12 +206,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="install/" class="btn btn-xs btn-default pull-right">
+      <a href="client_tools/install/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="install/" class="btn btn-xs btn-link">
-        Install client tools
+      <a href="client_tools/install/" class="btn btn-xs btn-link">
+        Install Client Tools
       </a>
     </div>
     
@@ -218,5 +232,5 @@ Edit on GitHub</a>
 </html>
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-05-31 14:46:33
+Build Date UTC : 2019-06-07 20:51:09
 -->
