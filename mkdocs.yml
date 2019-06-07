@@ -9,7 +9,7 @@ site_author: MkDocs Team
 
 # extra:
 #   logo:  image/logo.png
-  nav:
+nav:
   - Home: index.md
   - Client Tools:
     - Install Client Tools: client_tools/install.md
@@ -49,7 +49,7 @@ copyright: Copyright &copy; 2019 , Conductor Technologies.
 
 
 
-#     version: Version number to include right under the site name.
+# version: Version number to include right under the site name.
 # extra.version: Version number to include right under the site name.
 
 # extra.article_nav_top: Set to false to hide the Previous/Next navigation buttons above article contents.
