@@ -14,7 +14,7 @@ The Conductor client tools provide modules and classes to help you craft a submi
 
 ## Installation
 
-If you haven't already done so, [install Conductor client tools](../install.md). 
+If you haven't already done so, [install Conductor client tools](./install.md). 
 
 
 ## Quick start
