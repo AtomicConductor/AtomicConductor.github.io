@@ -64,9 +64,19 @@ List other guidelines here:
   * Don't put a period after headings.
   * Use a grammar checker. 
 
+#### Glossary
+
 Try to be consistent with Conductor concepts. For example, which of these?
 
-* render machine | render-instance | render-vm 
+* render machine | render-instance | render-vm | **render node**
+* render cores | **cores**
+* preemptible | low-cost | **standard** 
+* non-preemptible | **premium** 
+* disks | **file-system**
+* input data | scene data | **project data** 
+* Core V2.1
+* 
+
 
 #### What to document.
 
