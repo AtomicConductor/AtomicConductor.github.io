@@ -74,6 +74,7 @@ Try to be consistent with Conductor concepts. For example, which of these?
 * non-preemptible | standard | **premium**
 * disks | storage | **file-system**
 * input data | scene data | **project data**
+* first-middle-last | FML | **scout frames**
 * Core V2.1
 * 
 
