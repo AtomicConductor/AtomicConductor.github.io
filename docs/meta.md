@@ -68,13 +68,13 @@ List other guidelines here:
 
 Try to be consistent with Conductor concepts. For example, which of these?
 
-* render machine | render instance | render VM | **render node**
-* render cores | **cores**
-* preemptible | **low-cost**
-* non-preemptible | standard | **premium**
 * disks | storage | **file-system**
-* input data | scene data | **project data**
 * first-middle-last | FML | **scout frames**
+* input data | scene data | **project data**
+* non-preemptible | standard | **premium**
+* preemptible | **low-cost**
+* render cores | **cores**
+* render machine | render instance | render VM | **render node**
 * Core V2.1
 * 
 
