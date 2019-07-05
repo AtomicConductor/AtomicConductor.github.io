@@ -13,16 +13,18 @@ nav:
   - Home: index.md
   - Client Tools:
     - Install Client Tools: client_tools/install.md
+    - Configuration File: client_tools/config_yml.md
     - Plugins:
       - Clarisse: client_tools/plugins/clarisse.md
       - Maya: client_tools/plugins/maya.md
       - Nuke: client_tools/plugins/nuke.md
     - Command Line: client_tools/commandline.md
-  - Web dashboard: 
+  - Web Dashboard: 
     - Jobs View: web_dashboard/jobs_view.md
   - Knowledgebase:
     - Troubleshooting: knowledgebase/troubleshooting.md
     - Instance Types: knowledgebase/instance_types.md
+
       
   # - Meta: meta.md
  
