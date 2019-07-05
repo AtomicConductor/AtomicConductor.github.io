@@ -77,3 +77,11 @@ Full path to the location of a file containing your API_KEY. This is optional if
 api_key_path: /path/to/my/conductor_api_key.json
 ```
 
+#### location
+
+Tag your submissions with a location. This allows you to download only those tagged jobs while running the downloader daemon.
+
+``` yaml
+location: london_studio
+```
+
