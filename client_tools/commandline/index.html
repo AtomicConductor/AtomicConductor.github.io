@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="MkDocs Team">
+    <link rel="canonical" href="https://www.conductortech.com/client_tools/commandline/">
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Command Line - Conductor Documentation</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <link href="../../css/autumn.css" rel="stylesheet">
+    <link href="../../css/codetabs.css" rel="stylesheet">
+    <link href="../../css/extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Command line submission", url: "#_top", children: [
+              {title: "Introduction", url: "#introduction" },
+              {title: "Installation", url: "#installation" },
+              {title: "Quick start", url: "#quick-start" },
+              {title: "Reference", url: "#reference" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-97980144-4', 'auto');
+        ga('send', 'pageview');
+    </script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../web_dashboard/jobs_view/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../web_dashboard/jobs_view/" class="btn btn-xs btn-link">
+        Jobs View
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../plugins/nuke/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../plugins/nuke/" class="btn btn-xs btn-link">
+        Nuke
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="command-line-submission">Command line submission<a class="headerlink" href="#command-line-submission" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>The Conductor client tools provide modules and classes to help you craft a submission in cases where a GUI submitter is not suitable.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>If you haven't already done so, <a href="../install/">install Conductor client tools</a>. </p>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>The Python code below demonstrates how to use the <code>Submit</code> class to create a command line job submission. </p>
+<p> <div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>logging</span>
+<span class=kn>from</span> <span class=nn>conductor.lib</span> <span class=kn>import</span> <span class=n>conductor_submit</span><span class=p>,</span> <span class=n>package_utils</span><span class=p>,</span> <span class=n>api_client</span>
+
+<span class=c1># Set up logging (optional)</span>
+<span class=n>conductor_submit</span><span class=o>.</span><span class=n>set_logging</span><span class=p>(</span><span class=n>logging</span><span class=o>.</span><span class=n>DEBUG</span><span class=p>)</span>
+
+<span class=c1># Create a dictionary of arguments for your job.</span>
+<span class=n>args</span> <span class=o>=</span> <span class=p>{}</span>
+
+<span class=c1># Give the job a title to help identify it in the web dashboard. </span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;job_title&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&quot;Test Job: Vray Standalone Test&quot;</span>
+
+<span class=c1># Specify the Conductor project to associate this job with.</span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;project&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&quot;default&quot;</span>
+
+<span class=c1># Specify the what type of instance to use.</span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;machine_flavor&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&quot;standard&quot;</span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;cores&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2</span>
+
+<span class=c1># Specify the list of file dependencies the job requires. </span>
+<span class=c1># This includes textures, caches, plugins, tools.</span>
+<span class=c1># You may add files or directories from anywhere on your filesystem.</span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;upload_paths&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span>
+    <span class=s2>&quot;/path/to/project/batman_0008.vrscene&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;/path/to/project/batman_0024.vrscene&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;/path/to/tools/custom_vray&quot;</span>
+<span class=p>]</span>
+
+<span class=c1># Indicate that uploading should occur immediately. If this option is `False`, </span>
+<span class=c1># it indicates that uploading will be handled by the Conductor uploader daemon. </span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;local_upload&quot;</span><span class=p>]</span> <span class=o>=</span>  <span class=bp>True</span>
+
+<span class=c1># If your job uses custom tools or plugins, you&#39;ll need to provide the necessary </span>
+<span class=c1># environment so they can be found.</span>
+<span class=n>custom_environment</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=s2>&quot;VRAY_PLUGINS_x64&quot;</span><span class=p>:</span> <span class=s2>&quot;/path/to/tools/custom_vray/plugin&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;LD_LIBRARY_PATH&quot;</span><span class=p>:</span> <span class=s2>&quot;/path/to/tools/custom_vray/bin&quot;</span>
+<span class=p>}</span>
+
+<span class=c1># Indicate which software packages should be made available for the job</span>
+<span class=c1># See the notes below for help on finding package IDs for each required </span>
+<span class=c1># software package. </span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;software_package_ids&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&quot;7208372e306614d514944938c395e0e7&quot;</span><span class=p>]</span>
+
+<span class=c1># Request the packages that you want to use from Conductor. </span>
+<span class=n>all_packages</span> <span class=o>=</span> <span class=n>api_client</span><span class=o>.</span><span class=n>request_software_packages</span><span class=p>()</span> 
+<span class=n>packages</span> <span class=o>=</span> <span class=p>[</span><span class=n>p</span> <span class=k>for</span> <span class=n>p</span> <span class=ow>in</span> <span class=n>all_packages</span> <span class=k>if</span> <span class=n>p</span><span class=p>[</span><span class=s2>&quot;package_id&quot;</span><span class=p>]</span> <span class=ow>in</span> <span class=n>args</span><span class=p>[</span><span class=s2>&quot;software_package_ids&quot;</span><span class=p>]]</span>
+
+<span class=c1># Merge the environments from your chosen packages with the custom environment. </span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;environment&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=n>package_utils</span><span class=o>.</span><span class=n>merge_package_environments</span><span class=p>(</span><span class=n>packages</span><span class=p>,</span> <span class=n>base_env</span><span class=o>=</span><span class=n>custom_environment</span><span class=p>)</span>
+
+<span class=c1># Define the task data for the job. </span>
+<span class=c1># Each Task entry defines a command to be excecuted. </span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;tasks_data&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span> 
+    <span class=p>{</span>
+        <span class=s2>&quot;command&quot;</span><span class=p>:</span><span class=s2>&quot;vray -display=0 -sceneFile=/path/to/project/batman_0008.vrscene -imgFile=/path/to/project/output/output.exr&quot;</span><span class=p>,</span>
+        <span class=s2>&quot;frames&quot;</span><span class=p>:</span> <span class=s2>&quot;8&quot;</span>
+    <span class=p>},</span>
+    <span class=p>{</span>
+        <span class=s2>&quot;command&quot;</span><span class=p>:</span><span class=s2>&quot;vray -display=0 -sceneFile=/path/to/project/batman_0024.vrscene -imgFile=/path/to/project/output/output.exr&quot;</span><span class=p>,</span>
+        <span class=s2>&quot;frames&quot;</span><span class=p>:</span> <span class=s2>&quot;24&quot;</span>
+    <span class=p>}</span>
+<span class=p>]</span>
+
+<span class=c1># Define the directory where rendered images can be found when tasks are complete.</span>
+<span class=n>args</span><span class=p>[</span><span class=s2>&quot;output_path&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=s2>&quot;/path/to/project/output&quot;</span>
+
+<span class=c1># Instantiate a Submit object with the job args.</span>
+<span class=n>submission</span> <span class=o>=</span> <span class=n>conductor_submit</span><span class=o>.</span><span class=n>Submit</span><span class=p>(</span><span class=n>args</span><span class=p>)</span>
+
+<span class=c1># Run the submission</span>
+<span class=n>response</span><span class=p>,</span> <span class=n>response_code</span> <span class=o>=</span> <span class=n>submission</span><span class=o>.</span><span class=n>main</span><span class=p>()</span>
+
+<span class=c1># Inspect the response code</span>
+<span class=k>print</span> <span class=n>response_code</span>
+<span class=c1># 201</span>
+
+<span class=c1># Inspect the response</span>
+<span class=k>print</span> <span class=n>response</span>
+<span class=c1># {u&#39;body&#39;: u&#39;job submitted.&#39;,</span>
+<span class=c1>#  u&#39;jobid&#39;: u&#39;00695&#39;,</span>
+<span class=c1>#  u&#39;status&#39;: u&#39;success&#39;,</span>
+<span class=c1>#  u&#39;uri&#39;: u&#39;/jobs/00695&#39;}</span>
+</pre></div></p>
+<h4 id="package-ids">Package Ids<a class="headerlink" href="#package-ids" title="Permanent link">&para;</a></h4>
+<p>Use the Python code below to find <code>package_id</code>s for the packages you require.  </p>
+<p> <div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>conductor.lib</span> <span class=kn>import</span> <span class=n>api_client</span>
+
+<span class=n>packages</span> <span class=o>=</span> <span class=n>api_client</span><span class=o>.</span><span class=n>request_software_packages</span><span class=p>()</span>
+<span class=n>packages</span> <span class=o>=</span> <span class=nb>sorted</span><span class=p>(</span><span class=n>packages</span><span class=p>,</span> <span class=n>key</span><span class=o>=</span><span class=k>lambda</span> <span class=n>x</span><span class=p>:</span> <span class=n>x</span><span class=p>[</span><span class=s2>&quot;relative_path&quot;</span><span class=p>])</span>
+<span class=k>print</span> <span class=s2>&quot;</span><span class=se>\n</span><span class=s2>&quot;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=s2>&quot;{} -- {}&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>p</span><span class=p>[</span><span class=s2>&quot;package_id&quot;</span><span class=p>],</span> <span class=n>p</span><span class=p>[</span><span class=s2>&quot;relative_path&quot;</span><span class=p>])</span> <span class=k>for</span> <span class=n>p</span> <span class=ow>in</span> <span class=n>packages</span><span class=p>])</span>
+</pre></div></p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>The list below describes all available submission arguments.</p>
+<h4 id="autoretry_policy">autoretry_policy<a class="headerlink" href="#autoretry_policy" title="Permanent link">&para;</a></h4>
+<p>Dictates auto-retry behavior for unsuccessful tasks. This is particularly useful for preemptible instances.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;autoretry_policy&quot;</span><span class=p>:</span> <span class=p>{</span> 
+  <span class=s2>&quot;preempted&quot;</span><span class=p>:</span> <span class=p>{</span> <span class=s2>&quot;max_retries&quot;</span><span class=p>:</span> <span class=mi>2</span> <span class=p>},</span>  <span class=c1># when a task is preempted</span>
+  <span class=s2>&quot;failed&quot;</span><span class=p>:</span>    <span class=p>{</span> <span class=s2>&quot;max_retries&quot;</span><span class=p>:</span> <span class=mi>1</span> <span class=p>}</span>   <span class=c1># when a task fails</span>
+<span class=p>}</span>
+</pre></div></p>
+<h4 id="chunk_size">chunk_size<a class="headerlink" href="#chunk_size" title="Permanent link">&para;</a></h4>
+<p>The number of frames to render per task.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;chunk_size&quot;</span><span class=p>:</span> <span class=mi>15</span>
+</pre></div></p>
+<h4 id="cores">cores<a class="headerlink" href="#cores" title="Permanent link">&para;</a></h4>
+<p>The number of cpu cores the instance will have (2 minimum for highmem and highcpu instance types)</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;cores&quot;</span><span class=p>:</span> <span class=mi>64</span>
+</pre></div></p>
+<h4 id="enforced_md5s">enforced_md5s<a class="headerlink" href="#enforced_md5s" title="Permanent link">&para;</a></h4>
+<p>Only relevant when using the uploader daemon. Dictates md5 hash values that specific files must adhere to upon uploading via the uploader daemon. This is a mechanism to ensure that a file has not been modified between the time the job was submitted and the time the uploader daemon started to upload.</p>
+<p> <div class=codehilite><pre><span></span><span class=p>{</span><span class=s2>&quot;/tmp/my_maya_file.ma&quot;</span><span class=p>:</span> <span class=s2>&quot;GDVem8GYRUuh4douZwIwFg==&quot;</span><span class=p>}</span>
+</pre></div></p>
+<h4 id="environment">environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h4>
+<p>Specifies environment variables to be set om the render machine.</p>
+<p> <div class=codehilite><pre><span></span><span class=p>{</span><span class=s2>&quot;PYTHONPATH&quot;</span><span class=p>:</span> <span class=s2>&quot;/tmp/site-packages:/tmp/pipeline/site-packages&quot;</span><span class=p>}</span>
+</pre></div></p>
+<h4 id="job_title">job_title<a class="headerlink" href="#job_title" title="Permanent link">&para;</a></h4>
+<p>The title displayed in the web dashboard.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;title&quot;</span><span class=p>:</span> <span class=s2>&quot;My maya job&quot;</span>
+</pre></div></p>
+<h4 id="local_upload">local_upload<a class="headerlink" href="#local_upload" title="Permanent link">&para;</a></h4>
+<p>Dictates whether the submission will upload the job's dependencies immediately (True) or queue them for an uploader daemon to handle (False).</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;local_upload&quot;</span><span class=p>:</span> <span class=bp>False</span>
+</pre></div></p>
+<h4 id="location">location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h4>
+<p>A string that indicates which location the job should be associated with. This option is relevant if you submit jobs from different locations. These could be differing geographic locations or simply machines that have differing file system views. </p>
+<p>Typically each location should have its own Conductor downloader and uploader daemons running. The location feature allows each daemon to target only jobs that match its corresponding location.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;location&quot;</span><span class=p>:</span> <span class=s2>&quot;mars&quot;</span>
+</pre></div></p>
+<h4 id="machine_flavor">machine_flavor<a class="headerlink" href="#machine_flavor" title="Permanent link">&para;</a></h4>
+<p>The instance type to use for the job.  This works together with the cores argument. 
+Valid options are:</p>
+<ul>
+<li>standard</li>
+<li>highcpu</li>
+<li>highmem</li>
+</ul>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;machine_flavor&quot;</span><span class=p>:</span> <span class=s2>&quot;highcpu&quot;</span>
+</pre></div></p>
+<h4 id="metadata">metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h4>
+<p>Add custom metadata data to the job submission to help filter usage reports and so on.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;metadata&quot;</span><span class=p>:</span> <span class=p>{</span><span class=s2>&quot;shot&quot;</span><span class=p>:</span> <span class=s2>&quot;Ez500&quot;</span><span class=p>,</span> <span class=s2>&quot;asset&quot;</span><span class=p>:</span> <span class=s2>&quot;apple&quot;</span><span class=p>}</span>
+</pre></div></p>
+<h4 id="notify">notify<a class="headerlink" href="#notify" title="Permanent link">&para;</a></h4>
+<p>Emails addresses to be notified when the job is complete.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;notify&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;fred@flintstones.com&quot;</span><span class=p>,</span> <span class=s2>&quot;wilma@flintstones.com&quot;</span><span class=p>]</span>
+</pre></div></p>
+<h4 id="output_path">output_path<a class="headerlink" href="#output_path" title="Permanent link">&para;</a></h4>
+<p>The directory where images and other output files are written. This is also the location on the local filesystem where files will be downloaded to.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;output_path&quot;</span><span class=p>:</span> <span class=s2>&quot;/tmp/render_output&quot;</span>
+</pre></div></p>
+<h4 id="preemptible">preemptible<a class="headerlink" href="#preemptible" title="Permanent link">&para;</a></h4>
+<p>Whether the job uses preemptible instances.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;preemptible&quot;</span><span class=p>:</span> <span class=bp>True</span>
+</pre></div></p>
+<h4 id="priority">priority<a class="headerlink" href="#priority" title="Permanent link">&para;</a></h4>
+<p>Specify whether this job should take preference over other jobs in your account.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;priority&quot;</span><span class=p>:</span> <span class=mi>800</span>
+</pre></div></p>
+<h4 id="project">project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h4>
+<p>The name of the Conductor project to associate this job with.</p>
+<p> <div class=codehilite><pre><span></span>    <span class=s2>&quot;project&quot;</span><span class=p>:</span> <span class=s2>&quot;Spiderman&quot;</span>
+</pre></div></p>
+<h4 id="scout_frame">scout_frame<a class="headerlink" href="#scout_frame" title="Permanent link">&para;</a></h4>
+<p>Tasks that contain scout frames are run immediately, while the rest are put on hold.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;scout_frame&quot;</span><span class=p>:</span> <span class=s2>&quot;1-100x5&quot;</span>
+</pre></div></p>
+<h4 id="software_package_ids">software_package_ids<a class="headerlink" href="#software_package_ids" title="Permanent link">&para;</a></h4>
+<p>Ids for software packages to use for the job. Packages are identified by their ID number, which can be queried from Conductor's rest api.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;software_package_ids&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;ae8026b7d9cfe524a77a3ebe94b9130a&quot;</span><span class=p>,</span>  <span class=s2>&quot;7208372e306614d514944938c395e0e7&quot;</span><span class=p>]</span>
+</pre></div></p>
+<h4 id="tasks_data">tasks_data<a class="headerlink" href="#tasks_data" title="Permanent link">&para;</a></h4>
+<p>The definition of tasks. Each task dictionary must contain a command to be executed. It may optionally contain a frames field, which helps to determine whether it is a scout-frame.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;tasks_data&quot;</span><span class=p>:</span> <span class=p>[</span>
+<span class=p>{</span>   
+    <span class=s2>&quot;command&quot;</span><span class=p>:</span><span class=s2>&quot;vray -display=0 -sceneFile=/tmp/batman_0008.vrscene&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;frames&quot;</span><span class=p>:</span> <span class=s2>&quot;8&quot;</span>
+<span class=p>},</span>
+<span class=p>{</span>
+    <span class=s2>&quot;command&quot;</span><span class=p>:</span><span class=s2>&quot;vray -display=0 -sceneFile=/tmp/batman_0024.vrscene&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;frames&quot;</span><span class=p>:</span> <span class=s2>&quot;24&quot;</span><span class=p>}</span>
+<span class=p>]</span>
+</pre></div></p>
+<h4 id="upload_paths">upload_paths<a class="headerlink" href="#upload_paths" title="Permanent link">&para;</a></h4>
+<p>A list of files and directories to be uploaded.</p>
+<p> <div class=codehilite><pre><span></span><span class=s2>&quot;upload_paths&quot;</span><span class=p>:</span> <span class=p>[</span><span class=s2>&quot;/tmp/sourceimages&quot;</span><span class=p>,</span> <span class=s2>&quot;/tmp/my_maya_file.ma&quot;</span><span class=p>]</span>
+</pre></div></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../web_dashboard/jobs_view/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../web_dashboard/jobs_view/" class="btn btn-xs btn-link">
+        Jobs View
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../plugins/nuke/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../plugins/nuke/" class="btn btn-xs btn-link">
+        Nuke
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+      <p>
+        <a href="https://github.com/AtomicConductor/AtomicConductor.github.io/edit/master/docs/client_tools/commandline.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p><p>Copyright &copy; 2019 , Conductor Technologies.</p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
