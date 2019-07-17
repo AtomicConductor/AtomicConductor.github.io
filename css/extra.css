@@ -1,16 +1,16 @@
-/*.wm-top-container {
-  background-color: #222;
-}*/
-
-
 .col-md-12 {
-width: 100% !important;
-flex: 0 0 100% ;
-text-align: center;
+    width: 100% !important;
+    flex: 0 0 100%;
+    text-align: center;
 }
 
-img {  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.wm-page-content {
+    margin-left: 32px;
 }
-/*img + em { display: block; text-align: center;} */
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+ 
