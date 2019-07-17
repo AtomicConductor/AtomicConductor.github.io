@@ -2,7 +2,7 @@ site_name: Conductor Documentation
 theme: windmill
 
 site_description: Concuctor cloud rendering on demand
-repo_url: https://github.com/AtomicConductor/AtomicConductor.github.io
+# repo_url: https://github.com/AtomicConductor/AtomicConductor.github.io
 remote_branch: master
 site_url: https://www.conductortech.com
 site_description: Project documentation with Markdown.
