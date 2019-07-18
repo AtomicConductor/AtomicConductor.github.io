@@ -1,11 +1,11 @@
 site_name: Conductor Documentation
 theme: windmill
 site_description: Concuctor cloud rendering on demand
-repo_url: https://github.com/AtomicConductor/AtomicConductor.github.io
+repo_url: https://github.com/AtomicConductor/conductor_client
 remote_branch: master
 site_url: https://www.conductortech.com
-site_description: Project documentation with Markdown.
-site_author: MkDocs Team
+site_description: Concuctor Technical Documentation.
+site_author: Conductor Developers
 
 # extra:
 #   logo:  image/logo.png
