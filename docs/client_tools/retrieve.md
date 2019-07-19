@@ -10,7 +10,7 @@ date: 2019-07-19
 
 ## Introduction
 
-As tasks are completed, rendered files are made available to download. You may use the Conductor Downloader tool to fetch files to your local disk. Files are downloaded to the output path specified when the job was submitted.
+As tasks are completed, rendered files are made available to download. You may use the Conductor Downloader tool to fetch files to your local disk. Files are downloaded to the output path that was specified when the job was submitted.
 
 The Downloader can operate in one of two modes:
 
