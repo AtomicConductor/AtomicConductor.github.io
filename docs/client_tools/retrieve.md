@@ -62,3 +62,6 @@ If you prefer to run the downloader daemon in a docker container, you'll need to
 -v /projects/deadpool:/projects/deadpool
 -v /home:/home
 ```
+
+Instructions for installing docker can be found [here](https://docs.docker.com/installation/).
+
