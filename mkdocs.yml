@@ -19,6 +19,8 @@ nav:
       - Maya: client_tools/plugins/maya.md
       - Nuke: client_tools/plugins/nuke.md
     - Command Line: client_tools/commandline.md
+    - Retrieve Your Files: client_tools/retrieve.md
+    
   - Web Dashboard: 
     - Jobs View: web_dashboard/jobs_view.md
   - Knowledgebase:
