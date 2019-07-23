@@ -131,7 +131,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Specify the hardware configuration used to run your tasks. Higher specification instances are potentially faster and able to handle heavier scenes. You are encouraged to run tests to find the most cost-efficient combination that meets your deadline.</p>
 <hr />
 <h4 id="preemptible">Preemptible<a class="headerlink" href="#preemptible" title="Permanent link">&para;</a></h4>
-<p>Preemptible instances are less expensive to run than non-preemptible. The drawback is that they may be stopped at any time by the cloud provider. The probability of an instance being preempted rises with the duration of the task. Conductor does not support checkpointing, so if a task is preempted it is started from scratch on another instance. For this reason, yoo are encouraged to specify non-preemptible instancesif your renders take several hours.</p>
+<p>Preemptible instances are less expensive to run than non-preemptible. The drawback is that they may be stopped at any time by the cloud provider. The probability of an instance being preempted rises with the duration of the task. Conductor does not support checkpointing, so if a task is preempted it is started from scratch on another instance. For this reason, you are encouraged to specify non-preemptible instances if your renders take several hours.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is possible to change the preemptible setting in the web dashboard after the job has been submitted.</p>
