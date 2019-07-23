@@ -56,7 +56,7 @@ Specify the hardware configuration used to run your tasks. Higher specification 
 
 ---
 #### Preemptible
-Preemptible instances are less expensive to run than non-preemptible. The drawback is that they may be stopped at any time by the cloud provider. The probability of an instance being preempted rises with the duration of the task. Conductor does not support checkpointing, so if a task is preempted it is started from scratch on another instance. For this reason, yoo are encouraged to specify non-preemptible instancesif your renders take several hours.
+Preemptible instances are less expensive to run than non-preemptible. The drawback is that they may be stopped at any time by the cloud provider. The probability of an instance being preempted rises with the duration of the task. Conductor does not support checkpointing, so if a task is preempted it is started from scratch on another instance. For this reason, you are encouraged to specify non-preemptible instances if your renders take several hours.
 
 !!!note
     It is possible to change the preemptible setting in the web dashboard after the job has been submitted.
