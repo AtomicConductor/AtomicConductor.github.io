@@ -2,52 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://www.conductortech.com/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/install/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/config_yml/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/plugins/clarisse/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/plugins/maya/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/plugins/nuke/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/client_tools/commandline/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.conductortech.com/client_tools/retrieve/</loc>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/web_dashboard/jobs_view/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/knowledgebase/troubleshooting/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.conductortech.com/knowledgebase/instance_types/</loc>
-     <lastmod>2019-07-05</lastmod>
+     <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

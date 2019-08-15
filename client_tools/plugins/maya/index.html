@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="author" content="MkDocs Team">
+    <meta name="author" content="Conductor Developers">
     <link rel="canonical" href="https://www.conductortech.com/client_tools/plugins/maya/">
     <link rel="shortcut icon" href="../../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -35,8 +35,11 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Maya submitter.", url: "#_top", children: [
+          {title: "Maya submitter", url: "#_top", children: [
               {title: "Introduction", url: "#introduction" },
+              {title: "Installation", url: "#installation" },
+              {title: "Launch the submitter.", url: "#launch-the-submitter" },
+              {title: "Submit Your Job", url: "#submit-your-job" },
           ]},
         ];
 
@@ -93,9 +96,90 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="maya-submitter">Maya submitter.<a class="headerlink" href="#maya-submitter" title="Permanent link">&para;</a></h1>
+    <h1 id="maya-submitter">Maya submitter<a class="headerlink" href="#maya-submitter" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>The Conductor submitter for Maya allows you to ship renders to Conductor's cloud from a familiar interface within Maya.... WIP</p>
+<p>The Conductor submitter for Maya allows you to ship Arnold, Vray, or native Maya renders to Conductor. It handles a variety of plugins, such as Yeti, Xgen, Golaem crowd and so on.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>If you haven't already done so, <a href="../../install/">install Conductor client tools</a>. </p>
+<h2 id="launch-the-submitter">Launch the submitter.<a class="headerlink" href="#launch-the-submitter" title="Permanent link">&para;</a></h2>
+<p>Once Conductor is installed you'll see a Conductor shelf containing a button. When you are ready to submit a render, click the shelf button to launch the submitter.</p>
+<p>Alternatively, enter the following commands in a Python tab in the script editor:</p>
+<p> <div class=codehilite><pre><span></span><span class=n>conductor</span> <span class=kn>import</span> <span class=nn>submitter_maya</span>
+<span class=n>submitter_maya</span><span class=o>.</span><span class=n>MayaConductorSubmitter</span><span class=o>.</span><span class=n>runUi</span><span class=p>()</span>
+</pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must have a scene loaded that exists on disk before the submitter can launch.</p>
+</div>
+<p>The submitter is divided into three tabs:</p>
+<ul>
+<li>General</li>
+<li>Advanced</li>
+<li>Job software</li>
+</ul>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
+<p>Set the values specific to this submission.</p>
+<p><img alt="general" src="../../../image/maya/general.png" /></p>
+<hr />
+<h4 id="frame-range">Frame Range<a class="headerlink" href="#frame-range" title="Permanent link">&para;</a></h4>
+<p>The <strong>start</strong>, <strong>end</strong>, and <strong>step</strong> values that specify the range to render.</p>
+<hr />
+<h4 id="frame-chunk-size">Frame Chunk Size<a class="headerlink" href="#frame-chunk-size" title="Permanent link">&para;</a></h4>
+<p>A <strong>chunk</strong> is the set of frames handled by one task. If your renders are fast but loading the scene is slow, it may make sense to render may frames per task. If this is the case, set <strong>chunk size</strong> to a value greater than one.</p>
+<hr />
+<h4 id="instance-type">Instance Type<a class="headerlink" href="#instance-type" title="Permanent link">&para;</a></h4>
+<p>Specify the hardware configuration used to run your tasks. Higher specification instances are potentially faster and able to handle heavier scenes. You are encouraged to run tests to find the most cost-efficient combination that meets your deadline.</p>
+<hr />
+<h4 id="preemptible">Preemptible<a class="headerlink" href="#preemptible" title="Permanent link">&para;</a></h4>
+<p>Preemptible instances are less expensive to run than non-preemptible. The drawback is that they may be stopped at any time by the cloud provider. The probability of an instance being preempted rises with the duration of the task. Conductor does not support checkpointing, so if a task is preempted it is started from scratch on another instance. For this reason, you are encouraged to specify non-preemptible instances if your renders take several hours.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to change the preemptible setting in the web dashboard after the job has been submitted.</p>
+</div>
+<hr />
+<h4 id="project">Project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h4>
+<p>The Conductor project allows you to track usage and set cost limits on a project by project basis.</p>
+<hr />
+<h4 id="render-layers">Render Layers<a class="headerlink" href="#render-layers" title="Permanent link">&para;</a></h4>
+<p>Specify the layers and cameras you want to render?</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Conductor does not currently support Render Setup introduced in Maya 2016.5. As an interim workaround, you can set Maya to use Legacy Render Layers in Preferences-&gt;Rendering-&gt;Preferred Render Setup System</p>
+</div>
+<hr />
+<h4 id="upload-only">Upload Only<a class="headerlink" href="#upload-only" title="Permanent link">&para;</a></h4>
+<p>Uploads files but does not start any tasks.</p>
+<hr />
+<h4 id="scout-frames">Scout Frames<a class="headerlink" href="#scout-frames" title="Permanent link">&para;</a></h4>
+<p>Activates a set of frames to be rendered first. This allows you to check a subset of frames before committing to the full render.</p>
+<h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
+<p>Set the download location and notification email addresses.</p>
+<p><img alt="advanced" src="../../../image/maya/advanced.png" /></p>
+<hr />
+<h4 id="output-directory">Output Directory<a class="headerlink" href="#output-directory" title="Permanent link">&para;</a></h4>
+<p>Specify the location where rendered files. Any files produced by the render must be descendents of the output directory.</p>
+<hr />
+<h4 id="notify-on-job-completion">Notify on job completion<a class="headerlink" href="#notify-on-job-completion" title="Permanent link">&para;</a></h4>
+<p>Add email addresses you would like to be notified upon job completion, preemption or failure. To add multiple addresses, separate them with a space.</p>
+<h3 id="job-software">Job Software<a class="headerlink" href="#job-software" title="Permanent link">&para;</a></h3>
+<p>Select the software versions used to process your tasks. In most cases, versions are detected automatically based on those used in the scene. However, in some cases it may be necessary to override them.</p>
+<p><img alt="job" src="../../../image/maya/job.png" /></p>
+<hr />
+<h4 id="job-software_1">Job Software<a class="headerlink" href="#job-software_1" title="Permanent link">&para;</a></h4>
+<p>Indicates the versions of the software Conductor uses to process your job.  </p>
+<hr />
+<h4 id="available-software">Available Software<a class="headerlink" href="#available-software" title="Permanent link">&para;</a></h4>
+<p>Select alternative software versions here. </p>
+<hr />
+<h4 id="reset-ui">Reset UI<a class="headerlink" href="#reset-ui" title="Permanent link">&para;</a></h4>
+<p>At anytime, you can reset the settings by using the Reset UI data button in the upper right corner of the submitter interface.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not add any software versions that are not required for your renders as you are likely to incur unnecessary charges.</p>
+</div>
+<h2 id="submit-your-job">Submit Your Job<a class="headerlink" href="#submit-your-job" title="Permanent link">&para;</a></h2>
+<p>When you press <strong>Submit Job</strong> the submitter scans the scene for file dependencies and uploads to Conductor. Once the upload stage is complete, a job number is displayed that you can use to monitor your job in the Conductor web interface. </p>
+<p><img alt="submitted" src="../../../image/maya/submitted.png" /></p>
 
   <br>
     
@@ -132,7 +216,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <footer class="col-md-12 wm-page-content">
       <p>
-        <a href="https://github.com/AtomicConductor/AtomicConductor.github.io/edit/master/docs/client_tools/plugins/maya.md"><i class="fa fa-github"></i>
+        <a href="https://github.com/AtomicConductor/conductor_client/edit/master/docs/client_tools/plugins/maya.md"><i class="fa fa-github"></i>
 Edit on GitHub</a>
       </p><p>Copyright &copy; 2019 , Conductor Technologies.</p>
   <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
