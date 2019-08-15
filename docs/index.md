@@ -18,4 +18,4 @@ Have additional questions? Check out the [knowledgebase](knowledgebase/troublesh
 
 #### Use the [Clarisse plugin submitter](client_tools/plugins/clarisse.md)
 
-#### Use the Conductor [client side API](commandline.md) to make a submission
+#### Use the Conductor [client side API](client_tools/commandline.md) to make a submission
