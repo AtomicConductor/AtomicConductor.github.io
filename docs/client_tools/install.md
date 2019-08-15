@@ -1,37 +1,26 @@
 # Install client tools
 
-To install the Conductor client tools, choose an installer from the list below. If you are working in a shared environment, it is recommended that you install manually in a shared location and set a few environment variables for your studio.
+To install the Conductor client tools, choose an installer from the list below. If you are working in a shared environment, it is recommended that you install manually to a shared location and set some environment variables for your studio.
 
 ### Downloads
 
-
-#### For Maya and Nuke
-|Release label  |  Operating system| Download link | 
-|:------------|:-------------|:-------------|
-|Stable |Centos el7 installer|  [conductor-v2.7.100-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.7.100/conductor-v2.7.100-0.el7.x86_64.rpm) |
-|Stable |Windows 10 installer|  [conductor-v2.7.100.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.7.100/conductor-v2.7.100.exe) |
-|Stable |Mac installer|  [conductor-v2.7.100.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.7.100/conductor-v2.7.100.pkg) |
-|Stable |Manual install|  [v2.7.100.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.7.100.tar.gz) |
-
-
-#### For Clarisse
-|Release label  |  Operating system| Download link | 
-|:------------|:-------------|:-------------|
-|Clarisse beta |Centos el7 installer|  [conductor-v2.8.9-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.9/conductor-v2.8.9-0.el7.x86_64.rpm) |
-|Clarisse beta |Windows 10 installer|  [conductor-v2.8.9.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.9/conductor-v2.8.9.exe) |
-|Clarisse beta |Mac installer|  [conductor-v2.8.9.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.9/conductor-v2.8.9.pkg) |
-|Clarisse beta |Manual install|  [v2.8.9.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.8.9.tar.gz) |
+|Operating system| Download link | 
+|:------------|:-------------|
+|Centos el7 installer|  [conductor-v2.8.12-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.12/conductor-v2.8.12-0.el7.x86_64.rpm) |
+|Windows 10 installer|  [conductor-v2.8.12.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.12/conductor-v2.8.12.exe) |
+|Mac installer|  [conductor-v2.8.12.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.8.12/conductor-v2.8.12.pkg) |
+|Manual install|  [v2.8.12.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.8.12.tar.gz) |
 
 #### Others
 
-For all other versions, please visit the [Github releases page](https://github.com/AtomicConductor/conductor_client/releases)
+For other versions, please visit the [Github releases page](https://github.com/AtomicConductor/conductor_client/releases)
  
 
 ### To run an installer.
 
 - Choose the appropriate link to download an installer for your operating system.
 
-- Run the installer. Your system is set up and ready to submit jobs to Conductor. 
+- Run the installer. The Conductor client API and DCC integrations are installed and you are ready to submit jobs to Conductor. 
 
 ### To install manually
  
@@ -82,12 +71,13 @@ $Env:NUKE_PATH = "$Env:CONDUCTOR_LOCATION\nuke_menu"
 $Env:Path += ";$Env:CONDUCTOR_LOCATION/bin"
 ```
 
+### Use Conductor tools.
 
+To submit jobs to Conductor from your content creation application, follow the instructions in the links below:
 
-### Troubleshooting
+* [Maya](plugins/maya.md)
+* [Nuke](plugins/maya.md)
+* [Clarisse](plugins/maya.md)
 
-If you are having trouble with the installation, here are some steps and suggestions to help you debug.
-
-* Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
-* The passage is attributed to an unknown typesetter in the 15th century who.
-* Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+Or to use Conductor's client side API to submit jobs from within a Python script, follow the instructions [here](commandline.md).
+ 

@@ -1,10 +1,10 @@
 site_name: Conductor Documentation
-theme: windmill
-site_description: Concuctor cloud rendering on demand
+theme: 'windmill'
+site_description: Conductor cloud rendering on demand
 repo_url: https://github.com/AtomicConductor/conductor_client
 remote_branch: master
 site_url: https://www.conductortech.com
-site_description: Concuctor Technical Documentation.
+site_description: Conductor Technical Documentation.
 site_author: Conductor Developers
 
 # extra:
@@ -44,7 +44,11 @@ markdown_extensions:
       template: 'default'
   - toc:
       permalink: true
- 
+  - pymdownx.snippets:
+      base_path: './docs'
+    
+
+
 google_analytics: ['UA-97980144-4', 'auto']
 
 copyright: Copyright &copy; 2019 , Conductor Technologies.
