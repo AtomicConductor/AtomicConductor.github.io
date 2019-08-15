@@ -16,7 +16,7 @@ To install the Conductor client tools, choose an installer from the list below. 
 For other versions, please visit the [Github releases page](https://github.com/AtomicConductor/conductor_client/releases)
  
 
-### To run an installer.
+### To run an installer
 
 - Choose the appropriate link to download an installer for your operating system.
 
@@ -71,7 +71,7 @@ $Env:NUKE_PATH = "$Env:CONDUCTOR_LOCATION\nuke_menu"
 $Env:Path += ";$Env:CONDUCTOR_LOCATION/bin"
 ```
 
-### Use Conductor tools.
+### Use Conductor tools
 
 To submit jobs to Conductor from your content creation application, follow the instructions in the links below:
 

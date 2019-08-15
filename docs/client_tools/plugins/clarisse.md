@@ -6,7 +6,7 @@ authors:
 date: 2019-05-02
 ---
 
-# Clarisse submitter.
+# Clarisse submitter
 
 ## Introduction
 
@@ -247,7 +247,7 @@ Set the log level for Conductor's library logging.
 
 ### Extra environment window
 
-### Conductor Variables
+### Conductor variables
 
 The **ConductorJob** scripted class is designed to be flexible and powerful. Commands that are executed on Conductor's cloud machines are fully configurable from within the UI. In order to achieve this level of control, a set of variables are available. These are found in Clarisse's **Variables** panel. In most cases, you don't need them other than to set the job title. If you choose to use them you should understand how they work.
 

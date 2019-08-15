@@ -1,0 +1,16 @@
+.col-md-12 {
+    width: 100% !important;
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.wm-page-content {
+    margin-left: 32px;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+ 

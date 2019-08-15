@@ -16,7 +16,7 @@ The Conductor submitter for Maya allows you to ship Arnold, Vray, or native Maya
 
 If you haven't already done so, [install Conductor client tools](../install.md). 
 
-## Launch the submitter.
+## Launch the submitter
 Once Conductor is installed you'll see a Conductor shelf containing a button. When you are ready to submit a render, click the shelf button to launch the submitter.
 
 Alternatively, enter the following commands in a Python tab in the script editor:

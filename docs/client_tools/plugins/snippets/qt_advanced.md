@@ -1,6 +1,6 @@
 ---
 #### Output Directory
-Specify the location where rendered files. Any files produced by the render must be descendents of the output directory.
+Specify the location where files are rendered to. Any files produced by the render must be in a location somewhere below the output directory.
 
 ---
 #### Notify on job completion
