@@ -14,3 +14,93 @@ img {
     display: block;
 }
  
+.row {
+    display:"flex";
+    flex-direction:"row";
+
+}
+
+.cards {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+    padding: 12px;
+}
+
+
+.card {
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    border: 2px solid #d6d6d6;
+
+    -webkit-box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.54);
+    -moz-box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.54);
+    box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.54);
+
+    margin:12px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    /* border: 2px solid red; */
+    min-width: 280px;
+    height: 140px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    display: flex;
+    text-decoration:none;
+    /* color:black; */
+    /* height:100%; */
+}
+
+  /* mouse over link */
+  .card:link {
+    color:#333;
+  }
+  
+
+
+  .card:hover {
+    text-decoration:none;
+    -webkit-box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.80);
+    -moz-box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.80);
+    box-shadow: 4px 4px 12px -6px rgba(0,0,0,0.80);
+  }
+  
+  /* selected link */
+  .card:active {
+    /* text-decoration:none; */
+    border: 3px solid #ccc;
+  }
+
+
+.card-header {
+    font-size: 18px;
+    font-weight: bold;
+    color:#2fa4e7;
+}
+
+
+
+.card-body {
+    color:#333;
+    /* text-decoration:none; */
+    max-width: 250px;
+}
+
+
+
+
+.button {
+    font-size: 22px;
+ 
+    /* border: "5px solid red"!important; */
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+    
+/*     
+    width: 120px;
+    height: 80px; */
+}
