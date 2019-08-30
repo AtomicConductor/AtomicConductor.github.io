@@ -7,8 +7,6 @@ site_url: https://www.conductortech.com
 site_description: Conductor Technical Documentation.
 site_author: Conductor Developers
 
-# extra:
-#   logo:  image/logo.png
 nav:
   - Home: index.md
   - Client Tools:
@@ -20,16 +18,14 @@ nav:
       - Nuke: client_tools/plugins/nuke.md
     - Command Line: client_tools/commandline.md
     - Retrieve Your Files: client_tools/retrieve.md
-    
-  - Web Dashboard: 
+
+  - Web Dashboard:
     - Jobs View: web_dashboard/jobs_view.md
   - Knowledgebase:
     - Troubleshooting: knowledgebase/troubleshooting.md
     - Instance Types: knowledgebase/instance_types.md
+    - Cost Calculation: knowledgebase/pricing.md
 
-      
-  # - Meta: meta.md
- 
 extra_css:
   - css/autumn.css
   - css/codetabs.css
@@ -38,7 +34,7 @@ extra_css:
 
 markdown_extensions:
   - codehilite
-  - admonition 
+  - admonition
   - meta
   - markdown_fenced_code_tabs:
       template: 'default'
@@ -46,20 +42,9 @@ markdown_extensions:
       permalink: true
   - pymdownx.snippets:
       base_path: './docs'
-    
+
 
 
 google_analytics: ['UA-97980144-4', 'auto']
 
 copyright: Copyright &copy; 2019 , Conductor Technologies.
-
-
-
-
-
-# version: Version number to include right under the site name.
-# extra.version: Version number to include right under the site name.
-
-# extra.article_nav_top: Set to false to hide the Previous/Next navigation buttons above article contents.
-
-# extra.article_nav_bottom: Set to false to hide the Previous/Next navigation buttons below article contents.

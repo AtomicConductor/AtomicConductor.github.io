@@ -18,15 +18,15 @@ Any properties you set on a ConductorJob will be stored inside the project when 
 
 ## Installation
 
-If you haven't already done so, [install Conductor client tools](../install.md). 
- 
+If you haven't already done so, [install Conductor client tools](../install.md).
+
 ## Register the plugin
 To register the submitter, set the path to the provided script in the **Startup Script** section of the preferences panel. It will take effect the next time you start Clarisse.
 
 ``` bash
 $CONDUCTOR_LOCATION/conductor/clarisse/startup.py
 ```
- 
+
 
 
 ![prefs][prefs]
@@ -49,45 +49,45 @@ Once the plugin is registered, you should see ConductorJob in the **Create** men
 
 ![new][new]
 
-You'll now see a ConductorJob item in the attribute editor. 
+You'll now see a ConductorJob item in the attribute editor.
 
 !!!note
-    You can hover over any attribute name to get a detailed description of its purpose and behavior.
+    You can hover over any attribute name to get contextual help.
 
-* Set a title for your job. This will show up on the Conductor dashboard.
-* Click **Add** in the Images section to choose some images to be rendered.
+* Set a title for your job. This shows up on the Conductor dashboard when you submit.
+* Click **Add** in the Images section to choose some images or layers to be rendered.
 
 ![titleimage][titleimage]
 
 If you haven't done so already, turn on **Render To Disk** for each image and set a filename in the **Save As** attribute.
 
-You'll notice the project is **- not set -** and the pulldown menu is empty. This is because the submitter has not yet been in contact with your account at Conductor. 
+You'll notice the project is **- not set -** and the pulldown menu is empty. This is because the submitter has not yet been in contact with your account at Conductor.
 
-* Press the **Refresh** button at the top of the attribute editor and if prompted, sign in to Conductor.
+* Press the **Connect** button at the top of the attribute editor and if prompted, sign in to Conductor.
 * Choose a project from the **Project** drop-down menu.
 * In the Frames section, turn on **Use Custom Frames** and enter `1-10` in the **Custom Frames** field.
 * Set **Chunk Size** to 2.
 * Turn on **Use Scout Frames** and enter `3,8` in **Scout Frames** field.
 
-You'll notice the **Frames Info** attribute has updated to let you know which frames will be submitted, and how many will be scouted first. 
+You'll notice the **Frames Info** attribute has updated to let you know which frames will be submitted, and how many will be scouted first.
 
 ![frames][frames]
 
 * If you know the machine specification needed for your images, choose it in the **Instance Type** drop-down menu.
-* Check that your version of Clarisse appears in the **Packages** attribute. If it hasn't been detected, you'll need to open the **Choose Packages** panel and choose a suitable version.
+* Check that a suitable version of Clarisse appears in the **Clarisse Version** attribute.
 
-You are now ready to submit your render using either the **Submit** or **Preview** buttons, which you'll find at the top of the attribute editor. You are encouraged to use the **Preview** button, which will allow you to first check the parameters that will be submitted.
+You are now ready to submit your render using either the **Submit** or **Preflight** buttons at the top of the attribute editor. If you use the **Preflight** button you can check the submission values before submitting.
 
 
 ![preview][preview]
 
 
-If everything looks good, press the **Submit** button, and then head over to your Conductor dashboard to check on the job's progress.
+If everything looks good, press the **Submit** button, and then head over to the Conductor dashboard to monitor your job.
 
 
 ## Reference
 
-In this section you'll find a complete discussion of attributes, variables and other functionality.    
+In this section you'll find a complete discussion of attributes, variables and other functionality.
 
 ### Attributes
 
@@ -99,39 +99,43 @@ The title that appears in the Conductor dashboard. You may use Clarisse variable
 
 ---
 #### images
-Images to be rendered. Images must have the **Render to Disk** attribute set and their **Save As** field must contain a filename. You may use the **eye** buttons to disable one or more images.
+Images or layers to be rendered. Images must have their **Render to Disk** attribute set and their **Save As** field must contain a filename.
 
 ---
 #### conductor_project_name
 The Conductor project. The dropdown menu is populated or updated when the submitter connects to your Conductor account. If the menu contains only the **- not set -** option, then press the **refresh** button to connect.
 
 !!!note
-    If the list of projects in your account changed since the last time you opened the Clarisse project, you may find it is set incorrectly when it connects. 
+    If the list of projects in your account changed since the last time you opened the Clarisse project, you may find it is set incorrectly when it connects.
+
+---
+#### clarisse_version
+Choose the version of Clarisse to run on the render nodes.
 
 ---
 #### use_custom_frames
-Activate a text field to enter a custom frame list. When set, the frame ranges on connected image items will be ignored and the custom frames will be used for all. If you leave **use_custom_frames** off, then each image may specify it's own range and they may be different from each other. By default, the render command generated for each task renders all images together and calculates the correct frames to render for each image within the chunk. 
+Activate a text field to enter a custom frame list. When set, the frame ranges on connected image items will be ignored and the custom frames will be used for all. If you leave **use_custom_frames** off, then each image may specify it's own range and they may be different from each other. By default, the render command generated for each task renders all images together and calculates the correct frames to render for each image within the chunk.
 
 ---
 #### custom_frames
 The set of frames to render when **use_custom_frames** is on. To specify te set of frames enter a comma-separated list of arithmetic progressions. In most cases, this will be s simple range.
 
- `1001-1200` 
+ `1001-1200`
 
 However, any set of frames may be specified efficiently in this way.
 
- `1,7,10-20,30-60x3,1001` 
+ `1,7,10-20,30-60x3,1001`
 
 Negative frame numbers are not valid.
 
 ---
 #### chunk_size
-A **chunk** is the set of frames handled by one task. If your renders are fairly fast, it may make sense to render may frames per task, because the time it takes to spin up instances and sync can be significant by comparison. 
+A **chunk** is the set of frames handled by one task. If your renders are fairly fast, it may make sense to render may frames per task, because the time it takes to spin up instances and sync can be significant by comparison.
 
 ---
 #### best_chunk_size
 A convenience function that will try to distribute frames more evenly among chunks. It adjusts **chunk_size**
-while keeping the number of chunks unchanged. 
+while keeping the number of chunks unchanged.
 
 A contrived example. You want to render 100 frames and you set the chunk size to 33. This generates 4 chunks of lengths, 33, 33, 33, and 1. If you press **best_chunk_size**, **chunk_size** becomes 25. You still have 4 chunks.
 
@@ -145,6 +149,10 @@ Scout-frames to render. When the submission reaches Conductor, only those tasks 
 
 !!!note
     If **chunk_size** is greater than one, then you may find extra frames are rendered that were not listed as scout frames. As the smallest unit of execution is a task, there is no way to specify that part of a task should be started and another part held.
+
+---
+ #### tiles
+ Render tiles. Split each single frame across many machines.
 
 ---
 #### preemptible
@@ -162,19 +170,19 @@ Set the number of times to retry a failed task before marking it failed.
 #### dependency_scan_policy
 Specify how to find files that the project depends on. Your project is likely to contain references to external textures and geometry caches. These files all need to be uploaded. The dependency-scan searches for these files at the time you generate a preview or submit a job. There are 3 options.
 
-1. **No Scan.** No scan will be performed. This may be useful if the scanning process is slow for your project. You can instead choose to cache the list of dependencies. See [manage_extra_uploads](#manage_extra_uploads). If you choose this method, you should be aware when new textures or other dependencies are added to your project, and add them to the upload list manually. 
+1. **No Scan.** No scan will be performed. This may be useful if the scanning process is slow for your project. You can instead choose to cache the list of dependencies. See [manage_extra_uploads](#manage_extra_uploads). If you choose this method, you should be aware when new textures or other dependencies are added to your project, and add them to the upload list manually.
 
-- **Smart Sequence.** When set, an attempt is made to identify for upload, only those files needed by the frames being rendered. Filenames are searched for two patterns that indicate a time-varying component: `####` and `$4F`. 
+- **Smart Sequence.** When set, an attempt is made to identify for upload, only those files needed by the frames being rendered. Filenames are searched for two patterns that indicate a time-varying component: `####` and `$4F`.
     - If any number of hashes are found in a filename, then the list of files to upload is calculated based on the frames set in the ConductorJob, and the sequence attributes associated with the filename.
-    - Likewise, if $F variables are found, the list of files will reflect the frames as specified in the ConductorJob. However, expressions such as `$F * 2` are not resolved. 
+    - Likewise, if $F variables are found, the list of files will reflect the frames as specified in the ConductorJob. However, expressions such as `$F * 2` are not resolved.
 
-- **Glob.** Find all files that exist on disk that could match either of the two time-varying patterns. If for example, your shot is 50 frames, but you have 100 images on disk, then a glob scan will find and uploads all those images even though half of them are not used. 
+- **Glob.** Find all files that exist on disk that could match either of the two time-varying patterns. If for example, your shot is 50 frames, but you have 100 images on disk, then a glob scan will find and uploads all those images even though half of them are not used.
 
 !!! note
     Contexts that reference external Clarisse projects are ignored during the dependency scan. They are localized in the render package and are therefore not required for rendering.
 
 !!! note "Example"
-    Suppose you have a sequence of 1000 background images on disk. Your shot is 20 frames long and you've set the sequence attributes on the texture map to start 100 frames in. (-100 frame offset). The smart scan option will find frames from 0101 to 0120. 
+    Suppose you have a sequence of 1000 background images on disk. Your shot is 20 frames long and you've set the sequence attributes on the texture map to start 100 frames in. (-100 frame offset). The smart scan option will find frames from 0101 to 0120.
 
 
 
@@ -201,13 +209,6 @@ Opens a panel to browse or scan for files to upload. If any files are not found 
 #### extra_uploads
 Files to uploaded in addition to any files found by dependency scanning.
 
----
-#### choose_packages
-Opens the package chooser panel.
-
----
-#### packages
-Packages made available to the remote compute instances.
 
 ---
 #### manage_extra_environment
@@ -219,7 +220,7 @@ Extra environment encoded as a JSON string.
 
 ---
 #### task_template
-Specifies a template for the command that will be run on remote instances. See the Conductor documentation site for a detailed discussion.
+Specifies a template for the commands to run on remote instances. The template uses a set of tokens enclosed in angle brackets. All the Conductor tokens are prefixed with `ct_`, for example, `ct_chunks` and `ct_tiles`. They are intended for use only in **ConductorJob** items, and their values are resolved at the time you create a submission. If you examine the task_template, and then click the **Preflight** button, you'll get a good idea how they are resolved. See the table at the end of this document for a fiull list of available tokens, and the scopes in which they are valid.
 
 ---
 #### notify
@@ -237,64 +238,53 @@ Show a full stacktrace for software errors in the submitter.
 #### conductor_log_level
 Set the log level for Conductor's library logging.
 
-
-
 ### Actions
 
 ### Extra uploads window
 
-### Package chooser 
+### Package chooser
 
 ### Extra environment window
 
-### Conductor variables
+### Conductor tokens
 
-The **ConductorJob** scripted class is designed to be flexible and powerful. Commands that are executed on Conductor's cloud machines are fully configurable from within the UI. In order to achieve this level of control, a set of variables are available. These are found in Clarisse's **Variables** panel. In most cases, you don't need them other than to set the job title. If you choose to use them you should understand how they work.
+####Tokens exist at 3 different scopes:
 
-All the Conductor variables are prefixed with `CT_` and are created when the **ConductorJob** is first registered with Clarisse. They are intended for use only in **ConductorJob** items, and their values are set at the time you create a submission or preview. They cannot be relied upon outside this context, and the value displayed in the Variables panel is only the last value that was set. 
+* **Global.** The same value for all job items. Example `ct_tmp_dir`.
+* **Job.** A different vaue for each job. Example `ct_sequence`
+* **Task.** A different vaue for each generated task. . Example `ct_chunks`
 
-Conductor variables that hold paths are formatted to be compatible with Linux render instances. They are enclosed in double quotes, and on Windows, the drive letters are stripped away.
+Below is the full list of Conductor variables.
 
-####Conductor variables exist at 3 different scopes:
-
-* **Global.** The same value for all job items. Example `CT_TMP_DIR`.
-* **Job.** A different vaue for each job. Example `CT_SEQUENCE`
-* **Task.** A different vaue for each generated task. . Example `CT_CHUNKS`
-
-Below is the full list of Conductor variables.  
-
-|Variable name | Example value | Scope | 
+|Token name | Example value | Scope |
 |:------------|:-------------|:-------------|
-|CT_SEQLENGTH | 10 | Job |
-|CT_SEQUENCE | 1-10 | Job |
-|CT_SEQUENCEMIN | 1 | Job |
-|CT_SEQUENCEMAX | 10 | Job |
-|CT_CORES | 2 | Job |
-|CT_FLAVOR | standard | Job |
-|CT_INSTANCE | 2 core, 7.50GB Mem | Job |
-|CT_PREEMPTIBLE | preemptible | Job |
-|CT_RETRIES | 3 | Job |
-|CT_JOB | conductor_job_item_name | Job |
-|CT_SOURCES | project://scene/image1 project://scene/image2 | Job |
-|CT_SCOUT | 3-8x5 | Job |
-|CT_CHUNKSIZE | 2 | Job |
-|CT_CHUNKCOUNT | 5 | Job |
-|CT_SCOUTCOUNT | 2 | Job |
-|CT_TIMESTAMP | 2019_05_07_01_12_46 | Job |
-|CT_RENDER_PACKAGE | "/path/to/project/shot.render" | Global |
-|CT_PROJECT | dpool | Job |
-|CT_CHUNKS | 9:10 9:10 | Task |
-|CT_CHUNKLENGTH | 2 | Task |
-|CT_CHUNKSTART | 9 | Task |
-|CT_CHUNKEND | 10 | Task |
-|CT_DIRECTORIES | "/path/to/renders/layerA" "/path/to/renders/layerB" | Job |
-|CT_PDIR | /path/to/project | Global |
-|CT_TEMP_DIR | "/path/to/temp/directory" |  Global |
-
-
-
-
-
+|ct_sequencelength | 10 | Job |
+|ct_sequence | 1-10 | Job |
+|ct_sequencemin | 1 | Job |
+|ct_sequencemax | 10 | Job |
+|ct_cores | 2 | Job |
+|ct_flavor | standard | Job |
+|ct_instance | 2 core, 7.50GB Mem | Job |
+|ct_preemptible | preemptible | Job |
+|ct_retries | 3 | Job |
+|ct_job | conductor_job_item_name | Job |
+|ct_sources | project://scene/image1 project://scene/image2 | Job |
+|ct_scout | 3-8x5 | Job |
+|ct_chunksize | 2 | Job |
+|ct_chunkcount | 5 | Job |
+|ct_scoutcount | 2 | Job |
+|ct_timestamp | 2019_05_07_01_12_46 | Job |
+|ct_render_package | "/path/to/project/shot.render" | Global |
+|ct_project | dpool | Job |
+|ct_chunks | 9:10 9:10 | Task |
+|ct_chunklength | 2 | Task |
+|ct_chunkstart | 9 | Task |
+|ct_chunkend | 10 | Task |
+|ct_directories | "/path/to/renders/layerA" "/path/to/renders/layerB" | Job |
+|ct_pdir | /path/to/project | Global |
+|ct_temp_dir | "/path/to/temp/directory" |  Global |
+|ct_tiles | 9 |  Job |
+|ct_tile_number | 1 |  Subtask |
 
 
 [preview]: ../../image/clarisse/preview.png
