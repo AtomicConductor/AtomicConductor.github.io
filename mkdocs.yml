@@ -18,6 +18,7 @@ nav:
       - Nuke: client_tools/plugins/nuke.md
     - Command Line: client_tools/commandline.md
     - Retrieve Your Files: client_tools/retrieve.md
+    - Changelog: client_tools/CHANGELOG.md
 
   - Web Dashboard:
     - Jobs View: web_dashboard/jobs_view.md
