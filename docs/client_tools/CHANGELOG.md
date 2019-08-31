@@ -11,7 +11,7 @@
 
 * **Clarisse > Localize contexts:** Allows you to choose between localizing contexts, or shipping the job with nested xrefs in tact. Due to a bug in the Clarisse undo mechanism after localizing contexts, the only way to restore the project previously was to reload a saved backup after submitting. Now we can handle shipping xrefs, there's no need to modify the scene before submission and therefore the whole operation is faster.
 
-* **Clarisse > Token substitution:** \<angle bracket tokens> are now used to build the task command. The previous release used Clarisse $VARIABLES which could be confusing and less robust.
+* **Clarisse > Token substitution:** `<angle bracket tokens>` are now used to build the task command. The previous release used Clarisse `$VARIABLES` which could be confusing and less robust.
 
 * **Clarisse > CNODE arguments** Some CLI args, like -license_server, -config_file, and -debug_level, have been moved into the wrapper in order to keep the task command clean. They are implemented as default values that make sense for submissions to the cloud, but can be overridden by simply including them in the task template.
 
