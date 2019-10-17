@@ -103,7 +103,7 @@ Images or layers to be rendered. Images must have their **Render to Disk** attri
 
 ---
 #### conductor_project_name
-The Conductor project. The dropdown menu is populated or updated when the submitter connects to your Conductor account. If the menu contains only the **- not set -** option, then press the **refresh** button to connect.
+The Conductor project. The dropdown menu is populated or updated when the submitter connects to your Conductor account. If the menu contains only the **- not set -** option, then press the **Connect** button to connect.
 
 !!!note
     If the list of projects in your account changed since the last time you opened the Clarisse project, you may find it is set incorrectly when it connects.
