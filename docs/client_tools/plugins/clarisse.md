@@ -253,6 +253,7 @@ Set the log level for Conductor's library logging.
 * **Global.** The same value for all job items. Example `ct_tmp_dir`.
 * **Job.** A different vaue for each job. Example `ct_sequence`
 * **Task.** A different vaue for each generated task. . Example `ct_chunks`
+* **Tile.** A different vaue for each tile. . Example `ct_tile`
 
 Below is the full list of Conductor variables.
 
@@ -284,7 +285,7 @@ Below is the full list of Conductor variables.
 |ct_pdir | /path/to/project | Global |
 |ct_temp_dir | "/path/to/temp/directory" |  Global |
 |ct_tiles | 9 |  Job |
-|ct_tile_number | 1 |  Subtask |
+|ct_tile_number | 1 |  Tile |
 
 
 [preview]: ../../image/clarisse/preview.png
