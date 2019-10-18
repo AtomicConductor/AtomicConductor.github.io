@@ -85,6 +85,10 @@ You are now ready to submit your render using either the **Submit** or **Preflig
 If everything looks good, press the **Submit** button, and then head over to the Conductor dashboard to monitor your job.
 
 
+!!! warning
+    Due to a current limitation in CNode, the render will fail if the Clarisse **Temp** folder path contains spaces. This can happen on Windows if your home directory is your first and last name separated by a space. Please check the path in the **General** section of the Preferences panel. A safe alternative Temp folder on Windows is /Users/Public/tmp. You'll need to make sure the directory exists.
+
+
 ## Reference
 
 In this section you'll find a complete discussion of attributes, variables and other functionality.
@@ -151,8 +155,8 @@ Scout-frames to render. When the submission reaches Conductor, only those tasks 
     If **chunk_size** is greater than one, then you may find extra frames are rendered that were not listed as scout frames. As the smallest unit of execution is a task, there is no way to specify that part of a task should be started and another part held.
 
 ---
- #### tiles
- Render tiles. Split each single frame across many machines.
+#### tiles
+Render tiles. Split each single frame across many machines. 
 
 ---
 #### preemptible
@@ -248,12 +252,12 @@ Set the log level for Conductor's library logging.
 
 ### Conductor tokens
 
-####Tokens exist at 3 different scopes:
+####Tokens exist at 4 different scopes:
 
 * **Global.** The same value for all job items. Example `ct_tmp_dir`.
 * **Job.** A different vaue for each job. Example `ct_sequence`
-* **Task.** A different vaue for each generated task. . Example `ct_chunks`
-* **Tile.** A different vaue for each tile. . Example `ct_tile`
+* **Task.** A different vaue for each generated task. Example `ct_chunks`
+* **Tile.** A different vaue for each tile. Example `ct_tile`
 
 Below is the full list of Conductor variables.
 
