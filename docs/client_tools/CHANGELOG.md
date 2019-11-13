@@ -1,3 +1,13 @@
+# v2.11.2  -  2019.11.13
+
+* **Clarisse submitter:**
+  * Catch invalid glob path that caused Clarisse to crash.
+
+# v2.11.1  -  2019.10.31
+
+* **Uploader:**
+    * Support Uploading to AWS Buckets.
+
 # v2.10.1  -  2019.09.26
 
 * **Clarisse submitter:** 
