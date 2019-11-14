@@ -1,3 +1,10 @@
+# Unreleased
+
+# v2.11.3  -  2019.11.13
+
+* **Clarisse submitter:**
+  * Fixed bug where render file would be cleaned up before the upload daemon had a chance to upload it.
+
 # v2.11.2  -  2019.11.13
 
 * **Clarisse submitter:**
