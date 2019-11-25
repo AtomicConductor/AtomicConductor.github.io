@@ -6,10 +6,10 @@ To install the Conductor client tools, choose an installer from the list below. 
 
 |Operating system| Download link | 
 |:------------|:-------------|
-|Centos el7 installer|  [conductor-v2.11.3-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.3/conductor-v2.11.3-0.el7.x86_64.rpm) |
-|Windows 10 installer|  [conductor-v2.11.3.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.3/conductor-v2.11.3.exe) |
-|Mac installer|  [conductor-v2.11.3.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.3/conductor-v2.11.3.pkg) |
-|Manual install|  [v2.11.3.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.11.3.tar.gz) |
+|Centos el7 installer|  [conductor-v2.11.5-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5-0.el7.x86_64.rpm) |
+|Windows 10 installer|  [conductor-v2.11.5.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5.exe) |
+|Mac installer|  [conductor-v2.11.5.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5.pkg) |
+|Manual install|  [v2.11.5.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.11.5.tar.gz) |
 
 #### Others
 
