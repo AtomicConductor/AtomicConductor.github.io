@@ -47,6 +47,13 @@ Render Isotropix Clarisse jobs in the cloud.
 </section>
 </a>
 
+<a class="card" href="client_tools/plugins/deadline">
+<p class="card-header">Deadline Plugin</p> 
+<section class="card-body">
+Submit and monitor jobs from Thinkbox's Deadline
+</section>
+</a>
+
 <a class="card" href="client_tools/commandline">
 <p class="card-header">Python API</p> 
 <section class="card-body">

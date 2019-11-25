@@ -16,6 +16,7 @@ nav:
       - Clarisse: client_tools/plugins/clarisse.md
       - Maya: client_tools/plugins/maya.md
       - Nuke: client_tools/plugins/nuke.md
+      - Deadline: client_tools/plugins/deadline.md
     - Command Line: client_tools/commandline.md
     - Retrieve Your Files: client_tools/retrieve.md
     - Changelog: client_tools/CHANGELOG.md
@@ -37,6 +38,7 @@ markdown_extensions:
   - codehilite
   - admonition
   - meta
+  - footnotes
   - markdown_fenced_code_tabs:
       template: 'default'
   - toc:
