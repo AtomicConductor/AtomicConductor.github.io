@@ -28,7 +28,6 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
 
         deadline_plugin/custom/scripts/Jobs/ -> <your_deadline_repo>/custom/scripts/Jobs/
         deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/events/
-        deadline_plugin/custom/scripts/General/shutdown_conductor_instance.py -> your_deadline_repo>custom/scripts/General/
         
 3. Add the path of the conductor client tools to the python paths in your repo
 ![](../../image/deadline/python_path_repo.jpg) 
