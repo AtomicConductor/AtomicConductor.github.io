@@ -1,12 +1,12 @@
 ---
-title: Create a command-line submission
+title: Submit via the Python API
 summary: Use Conductor libraries to submit a job
 authors:
     - Julian Mann
 date: 2019-05-02
 ---
 
-# Command line submission
+# Submitting with the Python API
 
 ## Introduction
 

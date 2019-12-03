@@ -79,5 +79,5 @@ To submit jobs to Conductor from your content creation application, follow the i
 * [Nuke](plugins/maya.md)
 * [Clarisse](plugins/maya.md)
 
-Or to use Conductor's client side API to submit jobs from within a Python script, follow the instructions [here](commandline.md).
+Or to use Conductor's client side API to submit jobs from within a Python script, follow the instructions [here](pythonapi.md).
  
