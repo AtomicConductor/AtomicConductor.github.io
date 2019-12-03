@@ -23,16 +23,19 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
 
 *Steps 3-5 require Super User access in Deadline Monitor*
 
-1. Start *[Conductor uploader and downloader daemons]()*
-2. Copy plugins to the correct folders:
-
-        deadline_plugin/custom/scripts/Jobs/ -> <your_deadline_repo>/custom/scripts/Jobs/
-        deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/events/
-        
-3. Add the path of the conductor client tools to the python paths in your repo
-![](../../image/deadline/python_path_repo.jpg) 
-4. Add the Conductor paths to the MayaCmd plugin. You only need to add for the versions that you intend to use ![](../../image/deadline/maya_path_repo.jpg)
+<ol>
+<li>Start <em><a href="../../cli">Conductor uploader and downloader daemons</a></em></li><p>
+<li>Copy plugins to the correct folders:
+<pre style={color:black;}>
+deadline_plugin/custom/scripts/Jobs/* -> <your_deadline_repo>/custom/scripts/Jobs/
+deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/events/
+</pre></li><p>
+     
+<li>Add the path of the conductor client tools to the python paths in your repo
+<img src="../../../image/deadline/python_path_repo.jpg"/></li>
+<li>Add the Conductor paths to the MayaCmd plugin. You only need to add for the versions that you intend to use <img src="../../../image/deadline/maya_path_repo.jpg"/>
     
+    <pre>
         /opt/autodesk/maya-io/2016.5/maya-io2016.5.SP0/bin/Render
         /opt/autodesk/maya-io/2016/maya-io2016.SP0/bin/Render
         /opt/autodesk/maya-io/2017/maya-io2017.SP0/bin/Render
@@ -48,16 +51,16 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
         /opt/autodesk/maya-io/2018/maya-io2018.SP6/bin/Render
         /opt/autodesk/maya-io/2019/maya-io2019.SP0/bin/Render
         /opt/autodesk/maya-io/2019/maya-io2019.SP1/bin/Render
-        /opt/autodesk/maya-io/2019/maya-io2019.SP2/bin/Render
+        /opt/autodesk/maya-io/2019/maya-io2019.SP2/bin/Render</pre></li>
 
-5. Add `submit_to_conductor.py` as a Job menu script. The path to the icon is `deadline_plugin/custom/scripts/General/conductor_logo.ico`
-![](../../image/deadline/script_menu_repo.jpg)
+<li>Add <code>submit_to_conductor.py</code> as a Job menu script. The path to the icon is <code>deadline_plugin/custom/scripts/General/conductor_logo.ico</code>
+<img src="../../../image/deadline/script_menu_repo.jpg"/>
 
-6. The Deadline workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the [Deadline documentation](https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html) for more details.
+<li>The Deadline workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the <a href="https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html">Deadline documentation</a> for more details.</li><p>
 
-7. To properly connect to your Deadline RCS, you need to provide the hostname/port and the client certificate (.pfx). Client certificates with passwords **are not** supported. To provide theses values, you can either set the environment variables `CONDUCTOR_DEADLINE_PROXY` and `CONDUCTOR_DEADLINE_SSL_CERTIFICATE` or modify the code directly in the submit script:
-![](../../image/deadline/rcs_env_variables.png)
-
+<li>To properly connect to your Deadline RCS, you need to provide the hostname/port and the client certificate (.pfx). Client certificates with passwords <strong>are not</strong> supported. To provide theses values, you can either set the environment variables <code>CONDUCTOR_DEADLINE_PROXY</code> and <code>CONDUCTOR_DEADLINE_SSL_CERTIFICATE</code> or modify the code directly in the submit script:
+<img src="../../../image/deadline/rcs_env_variables.png"/>
+</ol>
  
 
 ## Usage
