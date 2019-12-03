@@ -54,6 +54,13 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
 5. Add `submit_to_conductor.py` as a Job menu script. The path to the icon is `deadline_plugin/custom/scripts/General/conductor_logo.ico`
 ![](../../image/deadline/script_menu_repo.jpg)
 
+6. The Deadline workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the [Deadline documentation](https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html) for more details.
+
+7. To properly connect to your Deadline RCS, you need to provide the hostname/port and the client certificate (.pfx). Client certificates with passwords **are not** supported. To provide theses values, you can either set the environment variables `CONDUCTOR_DEADLINE_PROXY` and `CONDUCTOR_DEADLINE_SSL_CERTIFICATE` or modify the code directly in the submit script:
+![](../../image/deadline/rcs_env_variables.png)
+
+ 
+
 ## Usage
 ### Prerequisites
 1. The Conductor upload daemon must be running
