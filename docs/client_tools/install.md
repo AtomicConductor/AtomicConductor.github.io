@@ -1,83 +1,39 @@
-# Install client tools
+---
+title: Install Conductor
+summary: Instructions for installing the Conductor client tools.
+authors:
+    - Julian Mann
+date: 2019-11-27
+---
 
-To install the Conductor client tools, choose an installer from the list below. If you are working in a shared environment, it is recommended that you install manually to a shared location and set some environment variables for your studio.
+# Install Conductor client tools
+Latest version: <iframe class="current-version" src="https://downloads.conductortech.com/conductor-desktop/current-version.txt"></iframe>
+
+Download and run an installer from the list below. 
 
 ### Downloads
 
 |Operating system| Download link | 
 |:------------|:-------------|
-|Centos el7 installer|  [conductor-v2.11.5-0.el7.x86_64.rpm](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5-0.el7.x86_64.rpm) |
-|Windows 10 installer|  [conductor-v2.11.5.exe](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5.exe) |
-|Mac installer|  [conductor-v2.11.5.pkg](https://github.com/AtomicConductor/conductor_client/releases/download/v2.11.5/conductor-v2.11.5.pkg) |
-|Manual install|  [v2.11.5.tar.gz](https://github.com/AtomicConductor/conductor_client/archive/v2.11.5.tar.gz) |
+|Mac installer|  [conductor-latest.pkg](https://downloads.conductortech.com/conductor-desktop/conductor-latest.pkg) |
+|Windows 10 installer|   [conductor-latest.exe](https://downloads.conductortech.com/conductor-desktop/conductor-latest.exe) |
+|Centos el7 installer|  [conductor-latest-0.el7.x86_64.rpm](https://downloads.conductortech.com/conductor-desktop/conductor-latest-0.el7.x86_64.rpm) |
 
-#### Others
 
-For other versions, please visit the [Github releases page](https://github.com/AtomicConductor/conductor_client/releases)
- 
+### After installation the following tools are available. 
 
-### To run an installer
+##### **Maya plugin**
+* Render using Arnold, Renderman, or VRay with the [Maya submitter plugin](/client_tools/maya.md)
 
-- Choose the appropriate link to download an installer for your operating system.
+##### **Nuke plugin**
+* Render Nuke Write nodes in the cloud with the [Nuke submitter plugin](/client_tools/nuke.md)
 
-- Run the installer. The Conductor client API and DCC integrations are installed and you are ready to submit jobs to Conductor. 
+##### **Clarisse plugin**
+* Render animations and large stills fast with the [Clarisse submitter plugin](/client_tools/clarisse.md)
 
-### To install manually
- 
-Copy the downloaded source directory to a location of your choice and set the following environment variables. The examples below use Bash, and Powershell for Windows. You should adjust for your chosen environment.
+##### **Companion app**
+* Contains a [Download manager](/client_tools/companion/downloader.md) and a [Submission kit](/client_tools/companion/submitter.md) for use when one of the above plugins doesn't fit the bill. 
 
-``` bash fct_label="Mac"
-export CONDUCTOR_LOCATION="/path/to/conductor_client"
-export CONDUCTOR_CONFIG="${HOME}/Library/Application Support/Conductor/config.yml"
-# Python
-export PYTHONPATH="${PYTHONPATH}:${CONDUCTOR_LOCATION}:${CONDUCTOR_LOCATION}/installers/osx/python/lib/python2.7/site-packages"
-# Maya
-export XBMLANGPATH=${CONDUCTOR_LOCATION}/conductor/resources:${XBMLANGPATH}
-export MAYA_SHELF_PATH="${CONDUCTOR_LOCATION}/maya_shelf"
-# Nuke
-export NUKE_PATH= "${NUKE_PATH}:${CONDUCTOR_LOCATION}/nuke_menu"
-# Conductor command line utilities
-export PATH="${CONDUCTOR_LOCATION}/bin:$PATH"
+##### **API**
+* Write your own integrations with the [Conductor Python API](/client_tools/pythonapi.md).
 
-```
-
-``` bash fct_label="Linux" 
-export CONDUCTOR_LOCATION="/path/to/conductor_client"
-export CONDUCTOR_CONFIG="${HOME}/.conductor/config.yml"
-# Python
-export PYTHONPATH="${PYTHONPATH}:${CONDUCTOR_LOCATION}:${CONDUCTOR_LOCATION}/python/lib/python2.7/site-packages"
-# Maya
-export XBMLANGPATH=${CONDUCTOR_LOCATION}/conductor/resources:${XBMLANGPATH}
-export MAYA_SHELF_PATH="${CONDUCTOR_LOCATION}/maya_shelf"
-# Nuke
-export NUKE_PATH= "${NUKE_PATH}:${CONDUCTOR_LOCATION}/nuke_menu"
-# Conductor command line utilities
-export PATH="${CONDUCTOR_LOCATION}/bin:$PATH"
-```
-
-``` powershell fct_label="Windows"
-$Env:CONDUCTOR_LOCATION = "C:\path\to\conductor_client"
-$Env:CONDUCTOR_CONFIG = "$Env:HOME\AppData\Roaming\Conductor Technologies\Conductor\config.yml"
-
-# python
-$Env:PYTHONPATH += ";$Env:CONDUCTOR_LOCATION"
-$Env:PYTHONPATH += ";$Env:CONDUCTOR_LOCATION\installers\windows\python\Lib\site-packages"
-# Maya
-$Env:XBMLANGPATH+="$Env:CONDUCTOR_LOCATION\conductor\resources"
-$Env:MAYA_SHELF_PATH+="$Env:CONDUCTOR_LOCATION\maya_shelf"
-# Nuke
-$Env:NUKE_PATH = "$Env:CONDUCTOR_LOCATION\nuke_menu"
-# Conductor command line utilities
-$Env:Path += ";$Env:CONDUCTOR_LOCATION/bin"
-```
-
-### Use Conductor tools
-
-To submit jobs to Conductor from your content creation application, follow the instructions in the links below:
-
-* [Maya](plugins/maya.md)
-* [Nuke](plugins/maya.md)
-* [Clarisse](plugins/maya.md)
-
-Or to use Conductor's client side API to submit jobs from within a Python script, follow the instructions [here](pythonapi.md).
- 

@@ -16,9 +16,9 @@ You may configure many ConductorJobs in a single project in order to try out dif
 
 Any properties you set on a ConductorJob will be stored inside the project when you save so you can be confident that subsequent renders of the same scene will behave the same.
 
-## Installation
+## Introduction
 
-If you haven't already done so, [install Conductor client tools](../install.md).
+--8<-- "/client_tools/snippets/install_pointer.md"
 
 ## Register the plugin
 To register the submitter, set the path to the provided script in the **Startup Script** section of the preferences panel. It will take effect the next time you start Clarisse.
@@ -37,7 +37,7 @@ $CONDUCTOR_LOCATION/conductor/clarisse/startup.py
 
     `from conductor.clarisse import startup`
 
-Once the plugin is registered, you should see ConductorJob in the **Create** menu, and in the **New** menu when you right click over a browser. If not, refer to [installation troubleshooting](../install.md#troubleshooting) or submit a ticket to [Conductor support](https://support.conductortech.com/hc/en-us/requests/new) .
+Once the plugin is registered, you should see ConductorJob in the **Create** menu, and in the **New** menu when you right click over a browser. If not, refer to [installation troubleshooting](./install.md#troubleshooting) or submit a ticket to [Conductor support](https://support.conductortech.com/hc/en-us/requests/new) .
 
 
 ## Quick start
@@ -292,8 +292,8 @@ Below is the full list of Conductor variables.
 |ct_tile_number | 1 |  Tile |
 
 
-[preview]: ../../image/clarisse/preview.png
-[titleimage]: ../../image/clarisse/titleimage.png
-[prefs]: ../../image/clarisse/prefs.png
-[new]: ../../image/clarisse/new.png
-[frames]: ../../image/clarisse/frames.png
+[preview]: ../image/clarisse/preview.png
+[titleimage]: ../image/clarisse/titleimage.png
+[prefs]: ../image/clarisse/prefs.png
+[new]: ../image/clarisse/new.png
+[frames]: ../image/clarisse/frames.png

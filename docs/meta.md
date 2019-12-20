@@ -230,11 +230,24 @@ ENV PATH /opt/silhouette7.0.11:$PATH
 !!! danger
     You are likely to cause considerable damage if you touch this button.
 
- 
+
+
 ### Misc
 
-* For strikethrough, use `<del>word</del>` or `<s>word</s>` as tildes dont work.
+For strikethrough, use `<del>word</del>` or `<s>word</s>` as tildes dont work.
  
+For special cases, you can always revert to html. Here we have an ordered list that contains `pre` block, without breaking the list order. This is not possible to do with existing markdown.
+ 
+<ol>
+<li>Foo</li>
+<li>Bar</li>
+<pre style={color:black;}>
+deadline_plugin/custom/scripts/Jobs/* -> /somewhere/else
+deadline_plugin/custom/scripts/Jobs/* -> /somewhere/else
+</pre>
+<li>Baz</li>
+</ol>
+
 
 [1]:https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=dp_ob_title_bk
 [2]:https://www.mkdocs.org/

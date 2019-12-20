@@ -19,7 +19,7 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
 
 ## Installation
 
-[![](../../image/download_icon.png)](https://github.com/ConductorTechnologies/deadline_plugin) Download the *[plugin](https://github.com/ConductorTechnologies/deadline_plugin)* from Github
+[![](../image/download_icon.png)](https://github.com/ConductorTechnologies/deadline_plugin) Download the *[plugin](https://github.com/ConductorTechnologies/deadline_plugin)* from Github
 
 *Steps 3-5 require Super User access in Deadline Monitor*
 
@@ -30,9 +30,9 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
         deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/events/
         deadline_plugin/custom/scripts/General/shutdown_conductor_instance.py -> your_deadline_repo>custom/scripts/General/
         
-3. Add the path of the conductor client tools to the python paths in your repo
-![](../../image/deadline/python_path_repo.jpg) 
-4. Add the Conductor paths to the MayaCmd plugin. You only need to add for the versions that you intend to use ![](../../image/deadline/maya_path_repo.jpg)
+3. Add the path of the conductor client tools to the Python paths in your repo
+![](../image/deadline/python_path_repo.jpg) 
+4. Add the Conductor paths to the MayaCmd plugin. You only need to add for the versions that you intend to use ![](../image/deadline/maya_path_repo.jpg)
     
         /opt/autodesk/maya-io/2016.5/maya-io2016.5.SP0/bin/Render
         /opt/autodesk/maya-io/2016/maya-io2016.SP0/bin/Render
@@ -52,12 +52,12 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
         /opt/autodesk/maya-io/2019/maya-io2019.SP2/bin/Render
 
 5. Add `submit_to_conductor.py` as a Job menu script. The path to the icon is `deadline_plugin/custom/scripts/General/conductor_logo.ico`
-![](../../image/deadline/script_menu_repo.jpg)
+![](../image/deadline/script_menu_repo.jpg)
 
 6. The Deadline workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the [Deadline documentation](https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html) for more details.
 
 7. To properly connect to your Deadline RCS, you need to provide the hostname/port and the client certificate (.pfx). Client certificates with passwords **are not** supported. To provide theses values, you can either set the environment variables `CONDUCTOR_DEADLINE_PROXY` and `CONDUCTOR_DEADLINE_SSL_CERTIFICATE` or modify the code directly in the submit script:
-![](../../image/deadline/rcs_env_variables.png)
+![](../image/deadline/rcs_env_variables.png)
 
  
 
@@ -90,7 +90,7 @@ Viewing reports and most other functions of a Deadline worker will work with a C
 ## Dependencies
 A task can not render if it does not have all of its required dependencies. The list of necessary dependencies is submitted to Conductor as part of the job submission process. The uploader daemon is responsible for performing the actual upload[^1]. Therefore, it's necessary to create this list of dependencies before the job is submitted. There are several ways to do this:
 
-1. Generate the sidecar dependency file when/prior to submitting the job. This can be done manually or as part of the submission to Deadline. Below is a python code snippet on how to do this:
+1. Generate the sidecar dependency file when/prior to submitting the job. This can be done manually or as part of the submission to Deadline. Below is a Python code snippet on how to do this:
   
         def get_dependencies():
             from conductor.lib import common, maya_utils

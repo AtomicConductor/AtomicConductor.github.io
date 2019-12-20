@@ -11,14 +11,23 @@ nav:
   - Home: index.md
   - Client Tools:
     - Install Client Tools: client_tools/install.md
+    - Maya: client_tools/maya.md
+    - Nuke: client_tools/nuke.md
+    - Clarisse: client_tools/clarisse.md
     - Configuration File: client_tools/config_yml.md
     - Retrieve Your Files: client_tools/retrieve.md
-    - Clarisse: client_tools/plugins/clarisse.md
     - Conductor CLI: client_tools/cli.md
-    - Maya: client_tools/plugins/maya.md
-    - Nuke: client_tools/plugins/nuke.md
+    - Deadline: client_tools/deadline.md
     - Python API: client_tools/pythonapi.md    
     - Changelog: client_tools/CHANGELOG.md
+    - Companion App:
+      - Overview: client_tools/companion/overview.md
+      - Downloader: client_tools/companion/downloader.md
+      - Submission Kit Reference: client_tools/companion/submitter.md
+      - Blender Example: client_tools/companion/blender.md
+      - Modo Example: client_tools/companion/modo.md
+      - Silhouette Example: client_tools/companion/silhouette.md
+      - Arnold Ass Example: client_tools/companion/ass.md
 
   - Web Dashboard:
     - Jobs View: web_dashboard/jobs_view.md
@@ -31,7 +40,6 @@ extra_css:
   - css/autumn.css
   - css/codetabs.css
   - css/extra.css
-
 
 markdown_extensions:
   - codehilite
