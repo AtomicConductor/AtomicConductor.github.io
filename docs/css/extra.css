@@ -100,7 +100,14 @@ img {
     border-style: solid;
     border-color: red;
     
-/*     
-    width: 120px;
-    height: 80px; */
+ 
+}
+
+.current-version {
+    color: red;
+    font-size: 22px;
+    height:20px;
+    border-width: 0;
+    border-style: none;
+    border-color: red;
 }
