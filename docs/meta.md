@@ -230,7 +230,21 @@ ENV PATH /opt/silhouette7.0.11:$PATH
 !!! danger
     You are likely to cause considerable damage if you touch this button.
 
+### Links
+When linking to internal pages, please use the reference-style links and place all the definitions at the bottom of the page. This will make updates easier if there's ever a 
+reorganization and files are moved around.
 
+```
+Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:
+
+This is [an example][id] reference-style link.
+You can optionally use a space to separate the sets of brackets:
+
+This is [an example] [id] reference-style link.
+Then, anywhere in the document, you define your link label like this, on a line by itself:
+
+[id]: http://example.com/  "Optional Title Here"
+```
 
 ### Misc
 

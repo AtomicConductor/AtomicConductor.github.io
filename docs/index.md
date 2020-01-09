@@ -1,6 +1,3 @@
-
-## Overview
-
 Welcome to the Conductor help center where you'll find information on installing, using, and troubleshooting Conductor.
 
 Have additional questions? Check out the [knowledgebase](knowledgebase/troubleshooting.md) or submit a ticket to [support](https://support.conductortech.com/hc/en-us/requests/new)
@@ -9,8 +6,8 @@ Have additional questions? Check out the [knowledgebase](knowledgebase/troublesh
 <section class="cards">
 
 
-<a class="card" href="client_tools/install/">
-<p class="card-header">Quick start</p> 
+<a class="card" href="client_tools/companion/overview">
+<p class="card-header">Desktop Companion</p> 
 <section class="card-body">
 Install the Conductor tools and start rendering.
 </section>
@@ -24,10 +21,10 @@ Render Autodesk Maya jobs in the cloud.
 </section>
 </a>
 
-<a class="card" href="client_tools/clarisse">
-<p class="card-header">Clarisse</p> 
+<a class="card" href="client_tools/install/">
+<p class="card-header">Quick Start</p> 
 <section class="card-body">
-Render Isotropix Clarisse jobs in the cloud. 
+Install the Conductor tools and start rendering.
 </section>
 </a>
 

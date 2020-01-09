@@ -1,5 +1,6 @@
 site_name: Conductor Documentation
 theme: 'windmill' 
+
 site_description: Conductor cloud rendering on demand
 #repo_url: https://github.com/AtomicConductor/conductor_client
 remote_branch: master
@@ -7,37 +8,33 @@ site_url: https://www.conductortech.com
 site_description: Conductor Technical Documentation.
 site_author: Conductor Developers 
 
-
-
 nav:
   - Home: index.md
-  - Client Tools:
-    - Install Client Tools: client_tools/install.md
-    - Maya: client_tools/maya.md
-    - Nuke: client_tools/nuke.md
-    - Clarisse: client_tools/clarisse.md
-    - Configuration File: client_tools/config_yml.md
-    - Retrieve Your Files: client_tools/retrieve.md
-    - Conductor CLI: client_tools/cli.md
-    - Deadline: client_tools/deadline.md
-    - Python API: client_tools/pythonapi.md    
-    - Changelog: client_tools/CHANGELOG.md
+  - Introduction: introduction.md
+  - Getting Started:
+    - Configuration: placeholder.md
+    - Uploading files: placeholder.md
+    - Submitting jobs: placeholder.md
+    - Monitoring jobs: placeholder.md
+    - Downloading files: placeholder.md
+  - Software:
     - Companion App:
       - Overview: client_tools/companion/overview.md
       - Downloader: client_tools/companion/downloader.md
-      - Submission Kit Reference: client_tools/companion/submitter.md
-      - Blender Example: client_tools/companion/blender.md
-      - Modo Example: client_tools/companion/modo.md
-      - Silhouette Example: client_tools/companion/silhouette.md
-      - Arnold Ass Example: client_tools/companion/ass.md
-
-  - Web Dashboard:
-    - Jobs View: web_dashboard/jobs_view.md
-  - Knowledgebase:
-    - Troubleshooting: knowledgebase/troubleshooting.md
-    - Instance Types: knowledgebase/instance_types.md
-    - Cost Calculation: knowledgebase/pricing.md
-
+      - Submitter:
+        - Reference: client_tools/companion/submitter.md
+        - Examples:
+          - Blender Example: client_tools/companion/blender.md
+          - Modo Example: client_tools/companion/modo.md
+          - Silhouette Example: client_tools/companion/silhouette.md
+          - Arnold Ass Example: client_tools/companion/ass.md
+    - Client Applications:  
+        - Maya: client_tools/maya.md
+        - Nuke: client_tools/nuke.md
+        - Clarisse: client_tools/clarisse.md
+        - Conductor CLI: client_tools/cli.md
+    - Integrations:
+      - Deadline: client_tools/deadline.md      
 
 extra_css:
   - css/autumn.css
@@ -60,4 +57,4 @@ markdown_extensions:
 
 google_analytics: ['UA-97980144-4', 'auto']
 
-copyright: Copyright &copy; 2019 , Conductor Technologies.
+copyright: Copyright &copy; 2020 , Conductor Technologies.
