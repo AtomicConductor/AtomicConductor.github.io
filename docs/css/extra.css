@@ -13,27 +13,20 @@ img {
     margin-right: auto;
     display: block;
 }
- 
+
 .row {
     display:"flex";
     flex-direction:"row";
-
 }
 
 .cards {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 12px;
 }
 
-
 .card {
-    /* border-radius: 6px 6px 6px 6px;
-    -moz-border-radius: 6px 6px 6px 6px;
-    -webkit-border-radius: 6px 6px 6px 6px;
-    border: 2px solid #d6d6d6; */
-
     -webkit-box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.16);
     -moz-box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.16);
     box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.16);
@@ -41,7 +34,6 @@ img {
     margin:12px;
     flex-shrink: 0;
     flex-grow: 1;
-    /* border: 2px solid red; */
     min-width: 280px;
     height: 140px;
 
@@ -50,30 +42,22 @@ img {
     padding: 12px;
     display: flex;
     text-decoration:none;
-    /* color:black; */
-    /* height:100%; */
 }
 
-  /* mouse over link */
-  .card:link {
+.card:link {
     color:#333;
-  }
-  
+}
 
-
-  .card:hover {
+.card:hover {
     text-decoration:none;
     -webkit-box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.22);
     -moz-box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.22);
     box-shadow: -1px 2px 5px 3px rgba(0,0,0,0.22);
-  }
-  
-  /* selected link */
-  .card:active {
-    /* text-decoration:none; */
-    border: 1px solid #ccc;
-  }
+}
 
+.card:active {
+    border: 1px solid #ccc;
+}
 
 .card-header {
     font-size: 18px;
@@ -81,26 +65,16 @@ img {
     color:#2fa4e7;
 }
 
-
-
 .card-body {
     color:#333;
-    /* text-decoration:none; */
     max-width: 250px;
 }
 
-
-
-
 .button {
     font-size: 22px;
- 
-    /* border: "5px solid red"!important; */
     border-width: 2px;
     border-style: solid;
     border-color: red;
-    
- 
 }
 
 .current-version {
@@ -113,5 +87,17 @@ img {
 }
 
 :root {
-  --main-bg-color:  #178BBB;
+    --main-bg-color:  #178BBB;
+}
+
+.navbar {
+    background-image: url("/image/logo2.png");
+    background-position: 12px;
+    background-repeat: no-repeat;
+    background-color: #333;
+    padding-left:40px;
+}
+
+.wm-toc-li.wm-current, .wm-toc-li.wm-current:hover {
+    background-color: #666;
 }
