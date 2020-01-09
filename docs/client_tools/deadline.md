@@ -19,7 +19,7 @@ Just as with any other instance in a Deadline managed farm, Conductor instances 
 
 ## Installation
 
-[![](../../image/download_icon.png)](https://github.com/ConductorTechnologies/deadline_plugin) Download the *[plugin](https://github.com/ConductorTechnologies/deadline_plugin)* from Github
+[![](../../image/download_icon.png)](https://github.com/ConductorTechnologies/deadline_plugin) Download the *[plugin](https://github.com/ConductorTechnologies/deadline-plugin)* from Github
 
 *Steps 3-5 require Super User access in Deadline Monitor*
 
