@@ -20,7 +20,7 @@ MarkupSafe==1.1.1
 mkdocs==1.0.4
 mkdocs-material==4.4.0
 mkdocs-minify-plugin==0.2.1
-mkdocs-windmill==1.0.0
+mkdocs-windmill==1.0.3
 packaging==19.0
 Pygments==2.3.1
 pymdown-extensions==6.0
