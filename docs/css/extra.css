@@ -111,3 +111,7 @@ img {
     border-style: none;
     border-color: red;
 }
+
+:root {
+  --main-bg-color:  #178BBB;
+}

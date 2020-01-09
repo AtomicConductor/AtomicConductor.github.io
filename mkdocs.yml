@@ -1,11 +1,13 @@
 site_name: Conductor Documentation
-theme: 'windmill'
+theme: 'windmill' 
 site_description: Conductor cloud rendering on demand
-repo_url: https://github.com/AtomicConductor/conductor_client
+#repo_url: https://github.com/AtomicConductor/conductor_client
 remote_branch: master
 site_url: https://www.conductortech.com
 site_description: Conductor Technical Documentation.
-site_author: Conductor Developers
+site_author: Conductor Developers 
+
+
 
 nav:
   - Home: index.md
@@ -35,6 +37,7 @@ nav:
     - Troubleshooting: knowledgebase/troubleshooting.md
     - Instance Types: knowledgebase/instance_types.md
     - Cost Calculation: knowledgebase/pricing.md
+
 
 extra_css:
   - css/autumn.css
