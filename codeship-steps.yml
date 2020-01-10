@@ -1,0 +1,10 @@
+- type: serial
+  steps:
+    - name: build
+      service: docs
+      command: sh -c "mkdocs build && mv site /site"
+
+    - name: deploy
+      command: echo "deploy to github pages"
+      service: docs
+      tag: authoring
