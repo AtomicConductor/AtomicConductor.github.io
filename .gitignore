@@ -1,7 +1,6 @@
-# mkdocs
-
-
 site/
 unused_css/
-README.md
 .DS_Store
+.vscode
+codeship.aes
+env
