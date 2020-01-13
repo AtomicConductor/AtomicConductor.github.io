@@ -14,7 +14,7 @@ date: 2019-12-02
 --8<-- "client_tools/snippets/install_pointer.md"
 
 
-You do not need to have Blender installed for this tutorial and there are no textures or other dependencies. The entire scene is contained in in a single Blender file which you can download below.
+You do not need to have Blender installed for this example, and there are no textures or other dependencies. The entire scene is contained in a single Blender file which you can download below.
 
 * Download: [bmw_half_turn_low.blend](https://downloads.conductortech.com/examples/companion/simple_blender/bmw_half_turn_low.blend)
 * Move it to a working directory. For this example `/Users/me/conductor_blender/`. You should substitute your actual directory where necessary.
@@ -33,7 +33,7 @@ The scene contains a camera flying 180 degrees around a pair of BMWs and is base
 You can browse for an output directory where your renders are ultimately downloaded to. This directory must not contain any of your input files.
 
 !!!note
-    Due to a limitation in the file dialog, the button to choose a directory is labeled "Upload". Don't worry, nothing is uploaded at this time.
+    Due to a limitation in the file dialog, the button to choose a directory is labeled "Upload".
 
 #### Task Template.
 
@@ -73,7 +73,7 @@ You may have noticed in the **Preview tab** that the `upload_paths` section was 
 
 #### Software.
 
-You must specify all the host software and plugin services you need in order for them to be made available to the render nodes and to have their environments correctly set.
+You must specify all the host software and plugin services you need for them to be made available to the render nodes and to have their environments correctly set.
 
 * Go to the **Software** tab and choose a recent version of Blender. 
 
