@@ -111,3 +111,19 @@ img {
 li:not(.wm-toc-opener){
     padding-left: 14px;
 }
+
+/* Support images with figures */
+figure.image {
+    padding-left:48px;
+    display:inline-block;
+    margin : 16px 0;
+}
+
+.image img {
+    margin:0;
+}
+
+.image figcaption {
+    text-align: center;
+    font-size: 0.8em;
+}
