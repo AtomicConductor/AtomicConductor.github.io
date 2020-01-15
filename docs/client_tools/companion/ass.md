@@ -22,7 +22,7 @@ The scene **Motion_blur.ma** contains a three frame animation of pool balls.
 
 ![poolballs][poolballs]
 
-## Export ass files.
+## Export ass files
 
 * Open the scene in Maya and render a test frame so you know what to expect.
 * Open **Render Settings->Common** tab and set **Frame Padding** to `4`. Change **Frame/Animation ext** if necessary.
