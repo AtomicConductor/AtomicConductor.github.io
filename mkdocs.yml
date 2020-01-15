@@ -25,12 +25,12 @@ nav:
         - Reference: client_tools/companion/submitter.md
         - Examples:
           - Blender Example: client_tools/companion/blender.md
-          - Modo Example: client_tools/companion/modo.md
-          - Silhouette Example: client_tools/companion/silhouette.md
+          # - Modo Example: client_tools/companion/modo.md
+          # - Silhouette Example: client_tools/companion/silhouette.md
           - Arnold Ass Example: client_tools/companion/ass.md
     - Client Applications:  
         - Maya: client_tools/maya.md
-        - Nuke: client_tools/nuke.md
+        # - Nuke: client_tools/nuke.md
         - Clarisse: client_tools/clarisse.md
         - Conductor CLI: client_tools/cli.md
     - Integrations:
