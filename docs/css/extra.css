@@ -108,9 +108,15 @@ img {
     border-color: #bae3c0;
 }
 
+
+/* 
+Commented out because it caused expanded Deadline
+section to widen the sidebar and overlap content.
+
 li:not(.wm-toc-opener){
     padding-left: 14px;
-}
+} 
+*/
 
 /* Support images with figures */
 figure.image {
