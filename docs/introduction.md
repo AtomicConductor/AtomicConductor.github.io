@@ -72,13 +72,6 @@ Conductor can manage this process for hundreds or thousands of jobs at the same 
 
 ### Hierarchy and Definitions
 
-
-
-<figure class="image">
-  <img style="width:400px;" src="/image/introduction/definitions.png">
-  <figcaption>Figure 6: Conductor Nomenclature</figcaption>
-</figure>
-
 **It is important to understand the 4 components of the Conductor service.**
 
 
