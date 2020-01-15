@@ -12,11 +12,10 @@ date: 2019-05-02
 
 The Conductor submitter for Clarisse allows you to ship renders to Conductor's cloud from a familiar interface within Clarisse. It's implemented as a custom class that lives inside the project. The class name is ConductorJob.
 
-You may configure many ConductorJobs in a single project in order to try out different cloud parameters. A single job may also be set up to render many images, such as multiple VR cameras.
+You may configure many ConductorJobs in a single project to try out different cloud parameters. A single job may also be set up to render many images, such as multiple VR cameras.
 
 Any properties you set on a ConductorJob will be stored inside the project when you save so you can be confident that subsequent renders of the same scene will behave the same.
 
-## Introduction
 
 --8<-- "/client_tools/snippets/install_pointer.md"
 
@@ -91,7 +90,7 @@ If everything looks good, press the **Submit** button, and then head over to the
 
 ## Reference
 
-In this section you'll find a complete discussion of attributes, variables and other functionality.
+In this section, you'll find a complete discussion of attributes, variables, and other functionality.
 
 ### Attributes
 
@@ -103,7 +102,7 @@ The title that appears in the Conductor dashboard. You may use Clarisse variable
 
 ---
 #### images
-Images or layers to be rendered. Images must have their **Render to Disk** attribute set and their **Save As** field must contain a filename.
+Images or layers to be rendered. Images must have the **Render to Disk** attribute set and the **Save As** field must contain a filename.
 
 ---
 #### conductor_project_name
@@ -156,7 +155,7 @@ Scout-frames to render. When the submission reaches Conductor, only those tasks 
 
 ---
 #### tiles
-Render tiles. Split each single frame across many machines. 
+Render tiles. Split each frame across many machines. 
 
 ---
 #### preemptible
@@ -228,15 +227,15 @@ Specifies a template for the commands to run on remote instances. The template u
 
 ---
 #### notify
-Indicates that notifications will be sent by email on job completion.
+Indicate that notifications will be sent by email on job completion.
 
 ---
 #### email_addresses
-A comma-delimited list of emails addresses to notify on job completion.
+A comma-delimited list of email addresses to notify on job completion.
 
 ---
 #### show_tracebacks
-Show a full stacktrace for software errors in the submitter.
+Show a full stack-trace for software errors in the submitter.
 
 ---
 #### conductor_log_level
