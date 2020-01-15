@@ -7,9 +7,9 @@ Have additional questions? Check out the [knowledgebase](knowledgebase/troublesh
 
 
 <a class="card" href="client_tools/companion/overview">
-<p class="card-header">Desktop Companion</p> 
+<p class="card-header">Conductor Companion</p> 
 <section class="card-body">
-Install the Conductor tools and start rendering.
+Desktop application for custom submissions and downloading rendered frames
 </section>
 </a>
 

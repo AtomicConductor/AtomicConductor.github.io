@@ -25,7 +25,7 @@ The scene contains a camera flying 180 degrees around a pair of BMWs and is base
 
 ## Configure the submission
 
-* Open the Companion App, sign in to your account, and go to the **Submission Kit** page.
+* Open the Companion app, sign in to your account, and go to the **Submission Kit** page.
 * Fill in the fields in the **General** tab as illustrated below. You may have to choose a different instance type and a project that exists in your account.
 
 ![general][general]
