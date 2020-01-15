@@ -35,7 +35,7 @@ The scene **Motion_blur.ma** contains a three frame animation of pool balls.
 
 #### Files
 
-* Open the Companion App, sign in to your account, and go to the **Submission Kit** page.
+* Open the Companion app, sign in to your account, and go to the **Submission Kit** page.
 * Go to the **Files** tab and use the folder button to browse for the new ass files.
 * Browse again to add the pool ball textures that came with the scene.
 

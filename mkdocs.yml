@@ -12,13 +12,13 @@ nav:
   - Home: index.md
   - Introduction: introduction.md
   - Getting Started:
-    - Configuration: placeholder.md
-    - Uploading files: placeholder.md
-    - Submitting jobs: placeholder.md
-    - Monitoring jobs: placeholder.md
-    - Downloading files: placeholder.md
+    - Overview: getting_started/overview.md    
+    - Submitting jobs: getting_started/submitting_jobs.md
+    - Managing jobs: getting_started/job_monitoring.md
+    - Downloading files: getting_started/downloading_files.md
+    - Configuration: getting_started/configuration.md
   - Software:
-    - Companion App:
+    - Conductor Companion:
       - Overview: client_tools/companion/overview.md
       - Downloader: client_tools/companion/downloader.md
       - Submitter:
@@ -45,11 +45,13 @@ markdown_extensions:
   - codehilite
   - admonition
   - meta
+  - def_list
   - footnotes
   - markdown_fenced_code_tabs:
       template: 'default'
   - toc:
       permalink: true
+      toc_depth: "2-6"
   - pymdownx.snippets:
       base_path: './docs'
 

@@ -101,3 +101,13 @@ img {
 .wm-toc-li.wm-current, .wm-toc-li.wm-current:hover {
     background-color: #666;
 }
+
+.admonition.tip { /* csslint allow: adjoining-classes */
+    color: #76947b;
+    background-color: #e5f9e8;
+    border-color: #bae3c0;
+}
+
+li:not(.wm-toc-opener){
+    padding-left: 14px;
+}
