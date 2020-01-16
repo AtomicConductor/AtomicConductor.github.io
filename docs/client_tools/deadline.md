@@ -13,7 +13,7 @@ Conductor is integrated into Deadline via a set of plugins and scripts. This too
 
 One of Conductor's underlying principles is to only spin-up an instance when it's needed by a specific job or task. This ensures that customers don't pay for idle machines. This is a shift from Deadline's (and most render farm manager's) paradigm that machines are running but idle until a job is assigned to them. This difference in paradigm is the main factor why Conductor wasn't implemented as a Deadline Cloud Plugin.
 
-Just as with any other instance in a Deadline managed farm, Conductor instances run the Deadline worker.
+Just as with any other instance in a Deadline managed farm, Conductor instances run the Deadline Worker.
 
 *As of Deadline 10.1, the term **Slave** has been replaced with **Worker***
 
@@ -56,7 +56,7 @@ deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/eve
 <li>Add <code>submit_to_conductor.py</code> as a Job menu script. The path to the icon is <code>deadline_plugin/custom/scripts/General/conductor_logo.ico</code>
 <img src="../../../image/deadline/script_menu_repo.jpg"/>
 
-<li>The Deadline workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the <a href="https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html">Deadline documentation</a> for more details.</li><p>
+<li>The Deadline Workers running on Conductor instances need to connect to your repository via a Remote Connection Server (RCS). See the <a href="https://docs.thinkboxsoftware.com/products/deadline/10.0/1_User%20Manual/manual/remote-connection-server.html">Deadline documentation</a> for more details.</li><p>
 
 <li>To properly connect to your Deadline RCS, you need to provide the hostname/port and the client certificate (.pfx). Client certificates with passwords <strong>are not</strong> supported. To provide theses values, you can either set the environment variables <code>CONDUCTOR_DEADLINE_PROXY</code> and <code>CONDUCTOR_DEADLINE_SSL_CERTIFICATE</code> or modify the code directly in the submit script:
 <img src="../../../image/deadline/rcs_env_variables.png"/>
@@ -76,15 +76,15 @@ deadline_plugin/custom/events/ConductorWorker -> <your_deadline_repo>/custom/eve
 4. Once you click *Submit* the job will be submitted to Conductor
 5. The dialog will reappear for each job selected (ex: if you selected five jobs to submit, the dialog will appear five times)
 6. It's imperative for a valid dependency sidecar file to be selected. For more details see the section on Dependencies
-7. After a few minutes new workers pop-up in the worker panel that have the suffix `-conductor`. Each worker will render exactly one Deadline task. After a worker completes a Deadline task, they will shut down.
-8. It's safe to *Delete* the Conductor workers that have completed their task. They will have a state of *Stalled*. This can be done from the Workers panel.
+7. After a few minutes new Workers pop-up in the Worker panel that have the suffix `-conductor`. Each Worker will render exactly one Deadline task. After a Worker completes a Deadline task, they will shut down.
+8. It's safe to *Delete* the Conductor Workers that have completed their task. They will have a state of *Stalled*. This can be done from the Workers panel.
 
 ## How it works
-The above is achieved by running a special Deadline worker job on Conductor - which is the Deadline worker software with some parameters to ensure it shuts down after it completes exactly one Deadline task. There's some additional logic to create a temporary Deadline group (`conductorautogroup_<jobid>`) to ensure that the submitted Deadline job only runs on the Conductor instances and that the Conductor instances only pick-up the given Deadline job.
+The above is achieved by running a special Deadline Worker job on Conductor - which is the Deadline Worker software with some parameters to ensure it shuts down after it completes exactly one Deadline task. There's some additional logic to create a temporary Deadline group (`conductorautogroup_<jobid>`) to ensure that the submitted Deadline job only runs on the Conductor instances and that the Conductor instances only pick-up the given Deadline job.
 
 An essential step is to ensure that a valid sidecar dependency file exists. If it doesn't, the Conductor instances will not have any of the necessary files to run the task. See the section on dependencies for more details.
 
-Viewing reports and most other functions of a Deadline worker will work with a Conductor deadline worker, except for any operation that involves sending a command directly to the host instance (see below for more details).
+Viewing reports and most other functions of a Deadline Worker will work with a Conductor Deadline Worker, except for any operation that involves sending a command directly to the host instance (see below for more details).
 
 <div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/db7ae6b1-0106-4bef-aaa9-ff87d3558dda" id=".01_Fkrc4X2p"></iframe></div>
 
@@ -115,14 +115,14 @@ Generally, if a DCC software is already open with the scene file loaded, scannin
 [^1]: It is possible to upload the files at the same time as submitting the job without using the uploader daemon. This can be configured in the Conductor config. However, this method is not recommended when submitting jobs via Deadline due to the potentially long wait times.*
 
 !!!note
-    *There are a few key differences between regular on-site Deadline workers and Conductor workers:*
+    *There are a few key differences between regular on-site Deadline Workers and Conductor Workers:*
     
-    - Conductor workers are not directly accessible like other workers. They are run from within the Conductor infrastructure. They don't have an exposed IP/hostname and therefore, remote commands do not work.
-    - Conductor workers can only render the jobs they're assigned. If you try to render a different job, it will fail (as none of the files are available to it).
-    - Conductor workers will manage themselves. They'll start-up and shut down as needed
+    - Conductor Workers are not directly accessible like other Workers. They are run from within the Conductor infrastructure. They don't have an exposed IP/hostname and therefore, remote commands do not work.
+    - Conductor Workers can only render the jobs they're assigned. If you try to render a different job, it will fail (as none of the files are available to it).
+    - Conductor Workers will manage themselves. They'll start-up and shut down as needed
 
 ##Licensing
-As of Deadline 10.1, Deadline workers running on AWS instances don't require any licenses.
+As of Deadline 10.1, Deadline Workers running on AWS instances don't require any licenses.
 Licensing of DCC's and all other software is managed by Conductor and included in the cost.
 
 ##Supported software
