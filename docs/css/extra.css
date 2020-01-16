@@ -109,14 +109,16 @@ img {
 }
 
 
-/* 
-Commented out because it caused expanded Deadline
-section to widen the sidebar and overlap content.
-
+/* Ensures that the expander (in the nav bar) doesn't mess-up the alignment */
 li:not(.wm-toc-opener){
     padding-left: 14px;
 } 
-*/
+
+/* Allows for a wider nav-bar that doesn't mess-up the content-pane */
+.wm-content-pane {
+    padding-left: 300px;
+    }
+
 
 /* Support images with figures */
 figure.image {

@@ -8,7 +8,7 @@ date: 2019-11-20
 
 # Deadline plugin
 
-## Introduction
+## Overview
 Conductor is integrated into Deadline via a set of plugins and scripts. This toolset is responsible for sending jobs to Conductor and ensuring these jobs only run on Conductor instances. The uploading of dependencies and the download of the resulting data is handled by Conductor's upload and download daemons respectively.
 
 One of Conductor's underlying principles is to only spin-up an instance when it's needed by a specific job or task. This ensures that customers don't pay for idle machines. This is a shift from Deadline's (and most render farm manager's) paradigm that machines are running but idle until a job is assigned to them. This difference in paradigm is the main factor why Conductor wasn't implemented as a Deadline Cloud Plugin.
@@ -114,12 +114,12 @@ Generally, if a DCC software is already open with the scene file loaded, scannin
 
 [^1]: It is possible to upload the files at the same time as submitting the job without using the uploader daemon. This can be configured in the Conductor config. However, this method is not recommended when submitting jobs via Deadline due to the potentially long wait times.*
 
-##Notes on the Conductor worker
-*There are a few key differences between regular on-site Deadline workers and Conductor workers:*
-
-- Conductor workers are not directly accessible like other workers. They are run from within the Conductor infrastructure. They don't have an exposed IP/hostname and therefore, remote commands do not work.
-- Conductor workers can only render the jobs they're assigned. If you try to render a different job, it will fail (as none of the files are available to it).
-- Conductor workers will manage themselves. They'll start-up and shut down as needed
+!!!note
+    *There are a few key differences between regular on-site Deadline workers and Conductor workers:*
+    
+    - Conductor workers are not directly accessible like other workers. They are run from within the Conductor infrastructure. They don't have an exposed IP/hostname and therefore, remote commands do not work.
+    - Conductor workers can only render the jobs they're assigned. If you try to render a different job, it will fail (as none of the files are available to it).
+    - Conductor workers will manage themselves. They'll start-up and shut down as needed
 
 ##Licensing
 As of Deadline 10.1, Deadline workers running on AWS instances don't require any licenses.
