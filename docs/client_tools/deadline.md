@@ -24,7 +24,7 @@ Download the *[plugin](https://github.com/ConductorTechnologies/deadline-plugin)
 *Steps 3-5 require Super User access in Deadline Monitor*
 
 <ol>
-<li>Start <em><a href="../../cli">Conductor uploader and downloader daemons</a></em></li><p>
+<li>Start <em><a href="../cli">Conductor uploader and downloader daemons</a></em></li><p>
 <li>Copy plugins to the correct folders:
 <pre style={color:black;}>
 deadline_plugin/custom/scripts/Jobs/* -> <your_deadline_repo>/custom/scripts/Jobs/
