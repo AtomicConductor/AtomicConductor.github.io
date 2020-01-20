@@ -1,5 +1,3 @@
 docs:
   encrypted_env_file: env.encrypted
   build: .
-  volumes:
-    - ./.tmp/site:/site
