@@ -1,10 +1,11 @@
-- type: serial
+- type: parallel
   steps:
-    - name: build
+    - name: deploy prod
+      tag: master
       service: docs
-      command: sh -c "mkdocs build && mv site /site"
+      command: sh -c "aws s3 cp ./site s3://${AWS_S3_BUCKET_NAME}/prod --recursive"
 
-    - name: deploy
-      command: echo "deploy to github pages"
+    - name: deploy dev
+      exclude: ^(master)
       service: docs
-      tag: authoring
+      command: sh -c "aws s3 cp ./site s3://${AWS_S3_BUCKET_NAME}/dev --recursive"
