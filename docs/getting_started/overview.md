@@ -22,9 +22,9 @@ To start using Conductor, head over to https://www.conductortech.com and click o
     The account name should be generic as it can be reused for multiple projects. Once the account is created, the name *can not* be changed.
 
 
-Fill in your personal details, accept the terms and conditions and you will recieve a confirmation email. After confirming your email you will be prompted for a password.
+Fill in your personal details, accept the terms and conditions and you will receive a confirmation email. After confirming your email you will be prompted for a password.
 
-You will then recieve a second email with instructions on downloading and getting started (pointing you to this page).
+You will then receive a second email with instructions on downloading and getting started (pointing you to this page).
 
 
 ## Installing

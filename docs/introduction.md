@@ -7,33 +7,18 @@ Conductor enables studios and artists to have access to any scale of compute res
 
 From the artist’s point of view, Conductor should be seen as simply an extension of their local environment. It is our job to provide a stable and extensible platform that allows them to use cloud resources without changing the way they work.
 
-
-<figure class="image">
-  <img src="/image/introduction/diagram.png">
-  <figcaption>Figure 1: Conductor Architecture</figcaption>
-</figure>
-
-
+![Figure 1: Conductor Architecture](image/introduction/diagram.png)
  
 ### Dynamic Scale 
 By using multiple vendors for public cloud computing from AWS or GCP, we can launch tens of thousands of instances on-demand and make those resources available to a customer when they need them. As soon as all work is complete, resources can be powered off, providing the most cost-efficient usage. 
 
 This just-in-time, scalable farm approach allows us to focus on the capacity needed for each shot, shifting away from the traditional attempts to maximize in-house or co-located resources, where studios constantly chase forecasts for finding peak future demand. We believe render demand should be accommodated down to the minute, based on render time, not on wasteful weekly or monthly forecasts.
 
-
-<figure class="image">
-  <img src="/image/introduction/graph.png">
-  <figcaption>Figure 2: Usage Chart Showing Varied Bursts of Compute</figcaption>
-</figure>
-
+![Figure 2: Usage Chart Showing Varied Bursts of Compute](image/introduction/graph.png)
 
 Conductor is designed to feel very much like using a normal local render farm. It automates all of the difficult "cloud stuff" to create a familiar, effortless process. This isn't your average render service: no FTP uploads, no re-pathing your scene's dependencies, no manual downloads and no human intervention necessary! Our goal is for Conductor to live side-by-side with your local farm to provide additional capacity or, if you're starting anew, alleviate the need to ever have a local farm to begin with!
 
- 
-<figure class="image">
-  <img src="/image/introduction/viewport1.png">
-  <figcaption>Figure 3: Maya Plugin for Shot Submissions</figcaption>
-</figure>
+![Figure 3: Maya Plugin for Shot Submissions](image/introduction/viewport1.png)
 
 ### DCC Plugins
 Simply launch the Conductor submitter plugin or custom submitter UI, set your render parameters such as frame range and desired machine type, and click "submit!" The submitter will find all dependencies for your scenes - be they models, textures, image sequences, etc. - and securely upload them to the cloud. 
@@ -46,10 +31,7 @@ Once the uploads are finished, your data will automatically synchronize to our h
 ### Web dashboard
 You'll be able to view your job's progress and control its tasks in Conductor's easy-to-use web interface. Once each frame finishes, it will be automatically downloaded back to the location you'd originally specified at submission time or to another location through our new Companion App. If the render instances that were started for your job don't have any other tasks to move on to, they're shut down and you're only billed for what you used, down to the minute.
 
-<figure class="image">
-  <img src="/image/introduction/companion.png">
-  <figcaption>Figure 4: Conductor Companion Download and Review</figcaption>
-</figure>
+![Figure 4: Conductor Companion Download and Review](image/introduction/companion.png)
 
 ### Flexibility
 Conductor can manage this process for hundreds or thousands of jobs at the same time, scaling massively to handle the most demanding tasks. Even if you're not a power user, Conductor provides the capacity to upload custom scripts and plugins, replicates your environment variables, and allows you to tag your jobs with arbitrary metadata that you can run reports on later. Its API provides hooks to do all kinds of neat stuff, from cost reporting to job controls.
@@ -64,11 +46,7 @@ Conductor can manage this process for hundreds or thousands of jobs at the same 
 
 3. User - Invited by Administrators or Owners, Users are the submitters to the Conductor Service. Users will have the right to start and restart Jobs/Tasks. 
 
-<figure class="image">
-  <img src="/image/introduction/dash.png">
-  <figcaption>Figure 5: Account Administration Tabs</figcaption>
-</figure>
-
+![Figure 5: Account Administration Tabs](image/introduction/dash.png)
 
 ### Hierarchy and Definitions
 
