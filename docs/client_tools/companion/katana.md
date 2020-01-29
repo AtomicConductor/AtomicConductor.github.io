@@ -1,9 +1,9 @@
 ---
-title: Ass Submission
-summary: Submit a Ass scene to Conductor for rendering.
+title: Katana Submission
+summary: Submit a Katana Renderman scene to Conductor for rendering.
 authors:
     - Julian Mann
-date: 2019-12-02
+date: 2020-01-29
 ---
 
 
