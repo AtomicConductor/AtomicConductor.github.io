@@ -87,6 +87,7 @@ location: london_studio
 upload_paths:
   - /path/to/my/scripts/prerender.py
   - /assets/not/detected/during/dependency/scan/
+```
 
         </td>
     </tr>
