@@ -248,8 +248,12 @@ Then, anywhere in the document, you define your link label like this, on a line 
 
 ### Misc
 
+#### Strikethrough
+
 For strikethrough, use `<del>word</del>` or `<s>word</s>` as tildes dont work.
- 
+
+#### Raw HTML
+
 For special cases, you can always revert to html. Here we have an ordered list that contains `pre` block, without breaking the list order. This is not possible to do with existing markdown.
  
 <ol>

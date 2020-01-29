@@ -25,6 +25,8 @@ nav:
         - Reference: client_tools/companion/submitter.md
         - Examples:
           - Blender Example: client_tools/companion/blender.md
+          - Katana Example: client_tools/companion/katana.md
+          
           # - Modo Example: client_tools/companion/modo.md
           # - Silhouette Example: client_tools/companion/silhouette.md
           - Arnold Ass Example: client_tools/companion/ass.md
@@ -35,7 +37,7 @@ nav:
         - Conductor CLI: client_tools/cli.md
     - Integrations:
       - Deadline: client_tools/deadline.md      
-
+  - FAQ: faq.md
 extra_css:
   - css/autumn.css
   - css/codetabs.css
