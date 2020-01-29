@@ -54,6 +54,8 @@ markdown_extensions:
       toc_depth: "2-6"
   - pymdownx.snippets:
       base_path: './docs'
+  - markdown_captions
+  - attr_list
 
 
 
