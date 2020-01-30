@@ -13,7 +13,7 @@ date: 2020-01-29
 
 --8<-- "client_tools/snippets/install_pointer.md"
 
-In this tutorial, you'll set up a Katana scene that uses Pixar's PRman and then render it on Conductor. 
+In this tutorial, you'll use Conductor to render a Katana-PRman project. 
 
 We don't provide a downloadable demo scene for this tutorial, so go ahead and build a simple scene with some objects that reference some file textures. Your node graph should look similar to the image below.
 
@@ -21,11 +21,11 @@ We don't provide a downloadable demo scene for this tutorial, so go ahead and bu
 
 ### Windows paths
 
-When your scene and assets are shipped to Conductor the filesystem hierarchy is set to mirror your local filesystem. However the render nodes run Linux so there are no drive letters in the paths. For this reason, it's best to use parameter expressions to [make paths relative to the katana project file][multi_platform]. By using expressions your project file becomes portable across different platforms.
+When your scene and assets are shipped to Conductor the filesystem hierarchy is set to mirror your local filesystem. However, the render nodes run Linux so there are no drive letters in the paths. For this reason, it's best to use parameter expressions to [make paths relative to the Katana project file][multi_platform]. By using expressions your project file becomes portable across different platforms.
 
 Let's suppose you have the following project:
 
-```C:/Users/julia/projects/kat/ocean.katana```
+`C:/Users/julia/projects/kat/ocean.katana`
 
 and it contains assets:
 
@@ -73,7 +73,7 @@ You can see the fully resolved expression in the parameter, and your project sho
 ![general][general]
 
 !!!note
-    Due to a limitation in the file dialog, the button to choose a directory is labeled "Upload" on some platforms. Don't worry, nothing is uploaded at this time.
+    The button to choose a directory may be labeled "Upload" on your computer. Don't worry, nothing gets uploaded at this time.
 
 #### Task Template.
 
@@ -101,7 +101,7 @@ Take a moment to save the state of the submission.
 #### Files
 
 
-* Go to the **Files** tab and use either the folder or the file icon to browse for all the assets your project depends on. Don't forget to include the katana file itself.
+* Go to the **Files** tab and use either the folder or the file icon to browse for all the assets your project depends on. Don't forget to include the Katana file itself.
 
 ![files][files]
 
@@ -134,9 +134,9 @@ Should you need to specify any environment variables, you can add them in the **
 
 ![environment][environment]
 
-In the screenshot above, the variable that points to the user's resource directory has been added. In this case you would also need to add the directory in the files tab so it gets uploaded.
+In the screenshot above, the variable that points to the user's resource directory has been added. In this case, you would also need to add the directory in the files tab so it gets uploaded.
 
-Remember to use forwards slashes and omit the drive letter in path variables, as they apply to the remote render node environment, which is Linux.
+Remember to use forward slashes and omit the drive letter in path variables, as they apply to the remote render node environment, which is Linux.
 
 See the full list of [Katana environment variables][env_vars]
 
