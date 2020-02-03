@@ -11,7 +11,7 @@ date: 2019-11-20
 ## Overview
 Conductor is integrated into Deadline via a set of plugins and scripts. This toolset is responsible for sending jobs to Conductor and ensuring these jobs only run on Conductor instances. The uploading of dependencies and the download of the resulting data is handled by Conductor's upload and download daemons respectively.
 
-One of Conductor's underlying principles is to only spin-up an instance when it's needed by a specific job or task. This ensures that customers don't pay for idle machines. This is a shift from Deadline's (and most render farm manager's) paradigm that machines are running but idle until a job is assigned to them. This difference in paradigm is the main factor why Conductor wasn't implemented as a Deadline Cloud Plugin.
+One of Conductor's underlying principles is to only spin-up an instance when it's needed by a specific job or task. This ensures that customers don't pay for idle machines. Traditional render farm managers' paradigm is that machines are running but idle until a job is assigned to them.  Conductor's integration with Deadline was designed in a way to take advantage of only spinning up instances when they are needed, so that users only pay for what they use.
 
 Just as with any other instance in a Deadline managed farm, Conductor instances run the Deadline Worker.
 
