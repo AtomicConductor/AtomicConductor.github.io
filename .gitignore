@@ -3,4 +3,5 @@ unused_css/
 .DS_Store
 .vscode
 codeship.aes
-env
+env-dev
+env-prod
