@@ -2,10 +2,10 @@
   steps:
     - name: deploy prod
       tag: master
-      service: docs_dev
+      service: docs_prod
       command: sh -c "aws s3 cp ./site s3://${AWS_S3_BUCKET_NAME} --recursive"
 
     - name: deploy dev
       exclude: ^(master)
-      service: docs_prod
+      service: docs_dev
       command: sh -c "aws s3 cp ./site s3://${AWS_S3_BUCKET_NAME} --recursive"
