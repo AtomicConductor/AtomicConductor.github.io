@@ -16,4 +16,5 @@ WORKDIR /code
 COPY . .
 
 ENV PATH /root/.local/bin:$PATH
+RUN rm -rf site
 RUN mkdocs build --clean
