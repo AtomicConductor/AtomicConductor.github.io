@@ -1,7 +1,7 @@
 - type: parallel
   steps:
     - name: deploy prod
-      tag: authoring
+      tag: master
       service: docs_prod
       command: sh -c "aws s3 cp ./site s3://${AWS_S3_BUCKET_NAME} --recursive --acl public-read"
 
